@@ -1,0 +1,264 @@
+* {
+    box-sizing: border-box;
+}
+section {
+    width: 100%;
+}
+.inbox_content{
+    background-color: rgba(255, 255, 255, .8);
+    min-height: 400px;
+    /* height: 700px; */
+}
+.contianer {
+    margin: 0 auto;
+    width: auto;
+    position: relative;
+}
+
+.boxlist {
+    width: auto;
+    display: flex;
+}
+
+.box_style {
+    writing-mode: vertical-lr;
+}
+
+.hidden {
+    display: none;
+    width: 0;
+}
+
+.box {
+    height: 80px;
+    width: 55px;
+    background-color: #FDBD10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 1s;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+.box:hover {
+    background-color: #0066B2;
+}
+
+.box:hover>p {
+    color: #e5e5e5;
+}
+
+.box.active {
+    width: 600px;
+    background-color: #0066B2;
+
+}
+
+.box.active>p {
+    writing-mode: horizontal-tb;
+    color: #e5e5e5;
+    letter-spacing: 10px;
+}
+
+.box.active>.hidden {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid;
+    width: 0;
+    animation: typing 1.5s steps(10, end) forwards, blinking 1s infinite;
+}
+
+/* content side */
+
+.btn_list.active {
+    background-color: #333;
+    color: #e5e5e5;
+}
+
+.tab-inner {
+    padding: 10px;
+    width: auto;
+    display: none;
+    height: 100%;
+}
+.btn_content {
+    border-left: 2px dotted #333;
+}
+.tab{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.card_style{
+    width: 80%;
+    background-color: #0066B2;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 1px 1px 3px #333;
+    color: #fff;
+}
+.date_title::before{
+    content: 'Time: ';
+    font-size: 1em;
+    letter-spacing: 0.2em;
+}
+.info_title::before{
+    content: 'Titl: ';
+    font-size: 1em;
+    letter-spacing: 0.2em;
+}
+hr{
+    border: 2px dashed #fff
+}
+.side2{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    flex-basis: 50%;
+}
+.side2-l, .side2-r{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.side2_img{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    gap: 4px;
+}
+.side2_img > img{
+    width: 100%;
+    height: 100%;
+}
+.side2_img > img:nth-child(1){
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.side2_img > img:nth-child(2){
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.side2_img > img:nth-child(3){
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;   
+}
+
+.side2-r{
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+}
+.side3{
+    width: 95%;
+    margin: 0 auto;
+}
+.side3-t{
+    text-align: center;
+}
+.side3-l > img{
+    width: 100%;
+}
+.side3-b{
+    display: flex;
+    justify-content: center;
+}
+.side3-r{
+    padding: 15px;    
+}
+
+.side4{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.side4-t{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.side4-b{
+    width: 95%;
+    border: 4px solid #0066B2;
+    box-shadow: 2px 2px 4px #333;
+}
+iframe{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* animate side */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 260px
+    }
+}
+
+@keyframes blinking {
+    0% {
+        border-right-color: transparent
+    }
+
+    50% {
+        border-right-color: white
+    }
+
+    100% {
+        border-right-color: transparent
+    }
+}
+
+/* rwd */
+@media screen and (max-width : 500px) {
+    .box.active > .hidden {
+        display: none;
+    }
+    .side4-t{
+        font-size: 1.2em;
+    }
+}
+@media screen and (max-width : 800px) {
+    .side2{
+        flex-direction: column;
+    }
+    .side2-l, .side2-r{
+        width: 95%;
+    }
+    .side3-b{
+        flex-direction: column;
+        align-items: center;
+    }
+}

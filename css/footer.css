@@ -1,0 +1,55 @@
+footer {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #0066B2;
+    padding: 15px 20px;
+    height: 200px;
+    flex-wrap: wrap;
+}
+
+.footer_type{
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.3em;
+    margin-bottom: 10px;
+}
+
+.alert {
+    right: 0;
+    bottom: 0;
+}
+.instagram::after{
+    content: '藍星鐵道便當';
+    color: #fff;
+    margin-left: 10px;
+}
+@media screen and (max-width : 1150px) {
+    footer{
+        height: 450px;
+    }
+    .worktime{
+        width: 100%;
+    }
+
+}
+@media screen and (max-width : 968px) {
+    .alert{
+        display: block;
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width : 646px) {
+    footer{
+        height: 650px;
+    }
+    .address{
+        width: 100%;
+    }
+}
+@media screen and (max-width : 512px){
+    span::after{
+        content: "\A";
+        white-space: pre;
+    }
+}

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;700&family=Roboto+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/opcss.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/home_section.css">
+    <style>
+        /* start */
+        body {
+            background-color: rgba(240, 240, 0, .5);
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .homecontent {
+            width: 100%;
+            border: 50%;
+            padding-top: 20px;
+        }
+
+        .mainlogo {
+            width: 400px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, .8);
+            padding: 10px;
+        }
+
+        .mainlogo>img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .topbanner {
+            background-image: url(./img/background/ContentBG1.jpeg);
+            width: 100%;
+            height: 450px;
+            background-repeat: none;
+            background-size: cover;
+            background-position: 0% 50%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: end;
+
+        }
+
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, .5);
+        }
+
+        .title1 {
+            background-color: #0066B2;
+            color: #fff;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hometext {
+            font-size: 3em;
+            line-height: 2em;
+            letter-spacing: 0.2em;
+            text-shadow: 6px 6px 15px #0066B2;
+            color: #fff;
+        }
+
+        @media screen and (max-width : 922px) {
+            .container {
+                width: 100%;
+                /* overflow: hidden; */
+            }
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .swiper {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .menu {
+            width: 500px;
+            height: 500px;
+        }
+
+        .swiper-slide {
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .swiper-slide>p {
+            display: block;
+            width: 80%;
+        }
+
+        @media screen and (max-width : 845px) {
+            .menu {
+                width: 100%;
+            }
+
+            .swiper-slide {
+                border-radius: 0;
+            }
+
+            .topbanner {
+                align-items: center;
+            }
+
+            .hometext {
+                font-size: 1.3em;
+            }
+
+            .topbanner {
+                height: 33vh;
+            }
+
+            main {
+                background-color: #0066B2;
+            }
+        }
+    </style>
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="p-rl d-flex">
+            <div class="head_left">
+                <ul class="head_list d-flex">
+                    <li class="h-b-style"><a href="#" class="btn-1">
+                            <p>關於我們</p>
+                            <p>About Us</p>
+                        </a></li>
+                    <li class="h-b-style"><a href="#" class="btn-1">
+                            <p>菜單</p>
+                            <p>Menu</p>
+                        </a></li>
+                    <li class="h-b-style p-rl"><a href="#" class="btn-1">
+                            <p>最新消息</p>
+                            <p>News</p>
+                        </a>
+                        <ul class="drop_list">
+                            <li class="h-b-style"><a href="#" class="btn-1">
+                                    <p>最新消息</p>
+                                    <p>Last News</p>
+                                </a></li>
+                            <li class="h-b-style"><a href="#" class="btn-1">
+                                    <p>最新折扣</p>
+                                    <p>Last Bonus</p>
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li class="h-b-style"><a href="#" class="btn-1">
+                            <p>線上預訂</p>
+                            <p>Reservation</p>
+                        </a></li>
+                    <li class="h-b-style"><a href="#" class="btn-1">
+                            <p>會員登入</p>
+                            <p>Login</p>
+                        </a></li>
+                </ul>
+            </div>
+            <div class="head_right p-ab">
+                <picture>
+                    <source media="(max-width: 922px)" srcset="img/icon/logo-small.png" />
+                    <img src="./img/icon/logo.svg" alt="Horses in Hawaii">
+                </picture>
+            </div>
+            <div class="burger">
+                <img src="./img/icon/Menuburger.svg" alt="">
+            </div>
+        </header>
+        <main>
+            <div class="topbanner">
+                <div class="mt-2">
+                    <h1 class="hometext">滿盒感動，<br>伴隨您一路前行，<br>藍星鐵路便當，真誠為您服務!</h1>
+                </div>
+            </div>
+            <div class="title1">
+                <h1 class="title_style">特色菜單</h1>
+                <h1 class="title_style">Our Menu</h1>
+            </div>
+            <br>
+            <div class="swiper mySwiper menu">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <h1 class="fz-1 fb">香菇滑雞飯</h1>
+                        <br>
+                        <img src="img/item/27755.png" alt="">
+                        <p>香菇滑雞飯是一道經典的中式料理，結合了鮮香的香菇和嫩滑的雞肉，搭配著香噴噴的米飯。這道菜色澤誘人，口感豐富，讓人一試難忘。香菇帶來濃郁的香味，與滑嫩的雞肉完美融合，味道鮮美又健康。香菇滑雞飯不僅美味，還營養均衡，是一道適合全家人品嚐的佳餚。
+                        </p>
+                    </div>
+                    <div class="swiper-slide">
+                        <h1 class="fz-1 fb">香菇滑雞飯</h1>
+                        <br>
+                        <img src="img/item/27755.png" alt="">
+                        <p>香菇滑雞飯是一道經典的中式料理，結合了鮮香的香菇和嫩滑的雞肉，搭配著香噴噴的米飯。這道菜色澤誘人，口感豐富，讓人一試難忘。香菇帶來濃郁的香味，與滑嫩的雞肉完美融合，味道鮮美又健康。香菇滑雞飯不僅美味，還營養均衡，是一道適合全家人品嚐的佳餚。
+                        </p>
+                    </div>
+                    <div class="swiper-slide">
+                        <h1 class="fz-1 fb">香菇滑雞飯</h1>
+                        <br>
+                        <img src="img/item/27755.png" alt="">
+                        <p>香菇滑雞飯是一道經典的中式料理，結合了鮮香的香菇和嫩滑的雞肉，搭配著香噴噴的米飯。這道菜色澤誘人，口感豐富，讓人一試難忘。香菇帶來濃郁的香味，與滑嫩的雞肉完美融合，味道鮮美又健康。香菇滑雞飯不僅美味，還營養均衡，是一道適合全家人品嚐的佳餚。
+                        </p>
+                    </div>
+                    <div class="swiper-slide">
+                        <h1 class="fz-1 fb">香菇滑雞飯</h1>
+                        <br>
+                        <img src="img/item/27755.png" alt="">
+                        <p>香菇滑雞飯是一道經典的中式料理，結合了鮮香的香菇和嫩滑的雞肉，搭配著香噴噴的米飯。這道菜色澤誘人，口感豐富，讓人一試難忘。香菇帶來濃郁的香味，與滑嫩的雞肉完美融合，味道鮮美又健康。香菇滑雞飯不僅美味，還營養均衡，是一道適合全家人品嚐的佳餚。
+                        </p>
+                    </div>
+                    <div class="swiper-slide">
+                        <h1 class="fz-1 fb">香菇滑雞飯</h1>
+                        <br>
+                        <img src="img/item/27755.png" alt="">
+                        <p>香菇滑雞飯是一道經典的中式料理，結合了鮮香的香菇和嫩滑的雞肉，搭配著香噴噴的米飯。這道菜色澤誘人，口感豐富，讓人一試難忘。香菇帶來濃郁的香味，與滑嫩的雞肉完美融合，味道鮮美又健康。香菇滑雞飯不僅美味，還營養均衡，是一道適合全家人品嚐的佳餚。
+                        </p>
+                    </div>
+                    <div class="swiper-slide">
+                        <p>更多菜單請點擊!</p>
+                        <br>
+                        <div class="h-b-style">
+                            <a href="#" class="btn-1">
+                                <p>菜單</p>
+                                <p>Menu</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <br>
+        </main>
+        <section>
+            <div class="title1">
+                <h1 class="title_style">訊息速報</h1>
+                <h1 class="title_style">What's News?</h1>
+            </div>
+            <section>
+                <div class="boxlist">
+                    <div class="box" data-title="0">
+                        <p class="box_style">最新消息</p>
+                        <p class="hidden">，一切信息，盡在這裡</p>
+                    </div>
+                    <div class="box" data-title="1">
+                        <p class="box_style">關於我們</p>
+                        <p class="hidden">，我們的故事由此點開</p>
+                    </div>
+                    <div class="box" data-title="2">
+                        <p class="box_style">線上預訂</p>
+                        <p class="hidden">，你的需求我們很在意</p>
+                    </div>
+                    <div class="box" data-title="3">
+                        <p class="box_style">門店信息</p>
+                        <p class="hidden">，在哪裡可以找到我們</p>
+                    </div>
+                </div>
+                <div class="inbox_content">
+                    <div class="tab-inner">
+                        <ol class="tab">
+                            <li><br></li>
+                            <li class="card_style mb-1">
+                                <h1 class="date_title">2023/06/22</h1>
+                                <h1 class="info_title">端午福利</h1>
+                                <hr>
+                                <p class="mt-2">即日起至連假結束，經典系列搭配飲品享受95折優惠!</p>
+                            </li>
+                            <li class="card_style mb-1">
+                                <h1 class="date_title">2023/06/22</h1>
+                                <h1 class="info_title">營業時間公告</h1>
+                                <hr>
+                                <p class="mt-2">端午連假期間本店照常營業!</p>
+                            </li>
+                            <li class="card_style mb-1">
+                                <h1 class="date_title">2023/06/08</h1>
+                                <h1 class="info_title">營業時間公告</h1>
+                                <hr>
+                                <p class="mt-2">6月11日(星期天)公休一日，造成不便，尚請見諒！</p>
+                            </li>
+                            <ul class="d-flex column flex-ja-c">
+                                <li>更多消息，請點擊：</li>
+                                <li><br></li>
+                                <li class="h-b-style p-rl"><a href="#" class="btn-1">
+                                        <p>最新消息</p>
+                                        <p>News</p>
+                                    </a></li>
+                                <li><br></li>
+                            </ul>
+                        </ol>
+                    </div>
+                    <div class="tab-inner">
+                        <div class="side2 mt-1 mb-1">
+                            <div class="side2-l">
+                                <div class="side2_img">
+                                    <img src="./img/item/side2-1.jpg" alt="">
+                                    <img src="./img/item/side2-2.jpg" alt="">
+                                    <img src="./img/item/side2-3.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="side2-r">
+                                <p>
+                                    2020年是個特別的日子，因為在那一年，我們開幕了！<br>
+                                    歡迎來到XX便當，一家致力於為您提供美味、營養且方便的便當店。<br>
+                                    我們深知現代生活的忙碌與繁忙，因此我們的目標是為您節省時間，同時讓您享受到美味的餐點。<br>
+                                    無論您是在辦公室、學校還是家中，我們都是您快速解決午餐或晚餐問題的最佳選擇。<br>
+                                    我們提供方便的外帶服務，讓您輕鬆帶上一份美味的便當。此外，我們也提供團體訂購和外送服務，以滿足您各種場合的需求。
+                                </p>
+                                <br>
+                                <ul class="d-flex column flex-ja-c">
+                                    <li class="mb-1">更多消息，請點擊：</li>
+                                    <li class="h-b-style mb-1"><a href="#" class="btn-1">
+                                            <p>關於我們</p>
+                                            <p>About Us</p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-inner">
+                        <div class="side3">
+                            <div class="side3-t mb-1 mt-1">
+                                <h1>想預先訂位，舉辦聚會嗎?</h1>
+                            </div>
+                            <div class="side3-b">
+                                <div class="side3-l">
+                                    <img src="./img/item/side3.jpg" alt="">
+                                </div>
+                                <div class="side3-r">
+                                    <p class="mb-1">
+                                        本店座位有限，如有多人內用。歡迎使用本區塊進行預定。<br>我們的的預定有以下幾條規則，請在詳細閱讀後再進行預定。<br>1.預定座位將加收10%服務費。<br>2.只能預定一個用餐時段(中午/晚上)。<br>3.每個座位至少要有一份餐點。<br>4.需預先付款。<br>如有行程變動導致無法如約前來，將不退還服務費。
+                                    </p>
+                                    <ul class="d-flex column flex-ja-c">
+                                        <li class="mb-1">欲知詳情，請點擊：</li>
+                                        <li class="h-b-style mb-1"><a href="#" class="btn-1">
+                                                <p>線上預訂</p>
+                                                <p>Reservation</p>
+                                            </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-inner">
+                        <div class="side4">
+                            <div class="side4-t">
+                                <p>藍星鐵路便當</p>
+                                <p>地址 : 台北市南京東路120號</p>
+                                <p>電話 : 02-85696678</p>
+                            </div>
+                            <div class="side4-b">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.165567215634!2d121.58374497529968!3d25.062376877797995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab7e387f96ad%3A0x928c5bdaa7baa718!2zMTE05Y-w5YyX5biC5YWn5rmW5Y2A5Y2X5Lqs5p2x6Lev5YWt5q61IFNlY3Rpb24gNjEyMOiZnw!5e0!3m2!1szh-TW!2stw!4v1688839097068!5m2!1szh-TW!2stw"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <footer class="d-flex p-rl">
+            <div class="flex-grow-1 worktime">
+                <ul>
+                    <li class="footer_type">營業時間 Our Hours</li>
+                    <li class="footer_type">禮拜二 到 禮拜五 / <span></span> 早上 11點 到 晚上 8點</li>
+                    <li class="footer_type">禮拜六 跟 禮拜天 / <span></span>早上 10點 到 晚上 9點</li>
+                    <li class="footer_type">禮拜一 公休</li>
+                </ul>
+            </div>
+            <div class="flex-grow-1 address">
+                <ul>
+                    <li class="instagram d-flex flex-a-c footer_type"><img src="img/icon/instagram.png" alt=""></li>
+                    <li class="footer_type">台北市南京東路120號</li>
+                    <li class="footer_type">02-85696678</li>
+                    <li class="footer_type">logorestaurant@gmail.com</li>
+                </ul>
+            </div>
+            <div class="flex-grow-1">
+                <ul class="d-flex">
+                    <li class="flex-grow-1">
+                        <ul>
+                            <li class="footer_type"><a href="#"" class=" footer_type">菜單</a></li>
+                            <li class="footer_type"><a href="#" class="footer_type">關於我們</a></li>
+                            <li class="footer_type"><a href="#" class="footer_type">最新消息</a></li>
+                        </ul>
+                    </li>
+                    <li class="flex-grow-1">
+                        <ul>
+                            <li class="footer_type"><a href="#" class="footer_type">線上預訂</a></li>
+                            <li class="footer_type"><a href="#" class="footer_type">會員登錄</a></li>
+                            <li class="footer_type"><a href="#" class="footer_type">外送服務</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="p-ab alert">
+                <p class="footer_type">本網站為緯育TibaMe【第85期】前端工程師專業技術養成班學員作品,僅供學習、展示之用途。</p>
+            </div>
+        </footer>
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+            integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="./js/justify_accronding.js"></script>
+        <script>
+            $(function () {
+
+                $('.burger').on('click', function () {
+                    if ($(window).width() < 922) {
+                        // $('.head_list').slideToggle();
+                        $('.head_left').toggleClass('active');
+                    }
+                })
+
+                $('.h-b-style').on('click', function () {
+                    // console.log($(window).width())
+                    if ($(window).width() > 922) {
+                        $(this).find('ul').slideToggle();
+                    } else {
+                        $(this).find('ul').fadeToggle();
+                    }
+                })
+            })
+            if ($(window).width() > 845) {
+                let swiper = new Swiper(".mySwiper", {
+                    slidesPerView: 1,
+                    // spaceBetween: 30,
+                    effect: "cards",
+                    grabCursor: true,
+                    // loop: true,
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                });
+            } else {
+                let swiper = new Swiper(".mySwiper", {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    // effect: "cards",
+                    grabCursor: true,
+                    // loop: true,
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                });
+            }
+        </script>
+    </div>
+</body>
+
+</html>
