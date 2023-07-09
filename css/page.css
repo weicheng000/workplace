@@ -1,0 +1,62 @@
+.rb_bottom,
+.rb_bottom .fy_y,
+.rb_bottom .pnbtn,
+.rb_bottom .previous,
+.rb_bottom .next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fy_y {
+    width: 24px;
+    height: 24px;
+    box-sizing: border-box;
+    background: #FDBD10;
+    /* border: 1px solid #0066B2; */
+    border-radius: 50%;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.fy_d {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #FDBD10;
+    margin-right: 12px;
+}
+
+.selected {
+    background: #0066B2;
+    color: #fff;
+    border: 0;
+}
+
+.pnbtn,
+.previous,
+.next {
+    width: 62px;
+    height: 31px;
+    box-sizing: border-box;
+    background-color: #FDBD10;
+    /* border: 3px solid #0066B2; */
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    color: #000;
+}
+
+.previous {
+    margin: 0 2px;
+}
+
+@media screen and (max-width : 520px) {
+    .rb_bottom{
+        flex-wrap: wrap;
+    }
+}

@@ -4,13 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;700&family=Roboto+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./css/opcss.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
-    <title>Menu</title>
+    <link rel="stylesheet" href="./css/page.css">
+    <title>News</title>
     <style>
         main {
-            min-height: 50vh;
+            width: 100%;
+        }
+
+        .news_container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .news_style {
+            width: 95%;
+            background-color: #0066B2;
+            color: #fff;
+            padding: 1.3em;
+            border-radius: 20px;
+            box-shadow: 1px 1px 2px #333;
+            cursor: pointer;
+            transition: all .3s;
+            margin-bottom: 1em;
+        }
+
+        .news_style:hover {
+            width: 95%;
+            background-color: #FDBD10;
+            color: #000;
+            box-shadow: 3px 3px 6px #333;
+            font-size: 1.2em;
+        }
+
+        .news_time {
+            right: 25px;
+            bottom: 10px;
+        }
+
+        .news_container>ul {
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width : 664px) {
+            .news_container{
+                width: 100%;
+                padding-left: 10px;
+            }
         }
     </style>
 </head>
@@ -28,7 +73,7 @@
                             <p>菜單</p>
                             <p>Menu</p>
                         </a></li>
-                    <li class="h-b-style p-rl"><a href="#" class="btn-1">
+                    <li class="h-b-style p-rl"><a href="#" class="btn-1 auto-hightlight">
                             <p>最新消息</p>
                             <p>News</p>
                         </a>
@@ -64,9 +109,69 @@
             </div>
         </header>
 
-        <main>
+        <main class="mt-2 mb-1">
+            <div class="news_container">
+                <h1>最新消息</h1>
+                <h1>Latest News</h1>
+                <br>
+                <ul>
+                    <li class="news_style p-rl">
+                        <div class="news_title">
+                            <p class="fb">端午福利</p>
+                            <p>即日起至連假結束，經典系列搭配飲品享受95折優惠!</p>
+                        </div>
+                        <br>
+                        <div class="news_time p-ab">
+                            <p>2023/06/22</p>
+                        </div>
+                    </li>
+                    <li class="news_style p-rl">
+                        <div class="news_title">
+                            <p class="fb">端午福利</p>
+                            <p>即日起至連假結束，經典系列搭配飲品享受95折優惠!</p>
+                        </div>
+                        <br>
+                        <div class="news_time p-ab">
+                            <p>2023/06/22</p>
+                        </div>
+                    </li>
+                    <li class="news_style p-rl">
+                        <div class="news_title">
+                            <p class="fb">端午福利</p>
+                            <p>即日起至連假結束，經典系列搭配飲品享受95折優惠!</p>
+                        </div>
+                        <br>
+                        <div class="news_time p-ab">
+                            <p>2023/06/22</p>
+                        </div>
+                    </li>
+                    <li class="news_style p-rl">
+                        <div class="news_title">
+                            <p class="fb">端午福利</p>
+                            <p>即日起至連假結束，經典系列搭配飲品享受95折優惠!</p>
+                        </div>
+                        <br>
+                        <div class="news_time p-ab">
+                            <p>2023/06/22</p>
+                        </div>
+                    </li>
+                </ul>
 
-
+            </div>
+            <br>
+            <div class="rb_bottom">
+                <div class="fy_y selected">1</div>
+                <div class="fy_y">2</div>
+                <div class="fy_y">3</div>
+                <div class="fy_y">4</div>
+                <div class="fy_y">5</div>
+                <div class="fy_d"></div>
+                <div class="fy_d"></div>
+                <div class="fy_d"></div>
+                <div class="fy_y">10</div>
+                <div class="previous">上一頁</div>
+                <div class="next">下一頁</div>
+            </div>
         </main>
 
         <footer class="d-flex p-rl">
@@ -114,8 +219,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
         integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/header.js"></script>
+    <script src="./js/page.js"></script>
 </body>
 
 </html>

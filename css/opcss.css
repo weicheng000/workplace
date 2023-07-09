@@ -74,3 +74,15 @@ li {
 .text-align-c{
     text-align: center;
 }
+
+.auto-hightlight {
+    background-color: #0066B2;
+    color: #fff;
+}
+
+@media screen and (max-width : 922px) {
+    .auto-hightlight{
+        background-color: #FDBD10;
+        color: #000;
+    }
+}
