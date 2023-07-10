@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @charset "UTF-8";
+
+    * {
+        position: relative;
+        font-family: "Roboto Condensed", "微軟正黑體";
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        background-color: #ccff99;
+        display: flex;
+        justify-content: center;
+        align-item: center;
+    }
+
+    #buy_list {
+        display: inline-block;
+        background-color: #f3f7f7;
+        box-shadow: 0px 0px 30px rgba(0, 57, 77, 0.2);
+        border: solid 4px #333333;
+        padding: 20px;
+    }
+
+    h1 {
+        border-bottom: solid 4px #333333;
+        background-color: #00394d;
+        color: #f3f7f7;
+        padding: 20px;
+        margin: -20px -20px 0px -20px;
+    }
+
+    #items_list {
+        padding: 5px;
+        margin: 10px 0px 0px 0px;
+        background-color: #f3f7f7;
+    }
+
+    .buy_item {
+        background-color: #f3f7f7;
+        padding: 5px;
+        list-style: none;
+        margin: 10px 0px 0px 0px;
+        border: solid 3px #333333;
+        font-weight: 900;
+    }
+
+    .buy_item input {
+        width: 100px;
+        border: solid 3px;
+        padding: 2px;
+    }
+
+    .buy_item .price {
+        display: inline-block;
+        position: absolute;
+        padding: 0px 8px;
+        right: 50px;
+        background-color: #ccff99;
+    }
+
+    .buy_item .price::before {
+        content: "$ ";
+    }
+
+    .buy_item .del_btn {
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        padding: 0px 6px;
+        cursor: pointer;
+    }
+
+    .buy_item .del_btn:hover {
+        background-color: #333333;
+        color: #f3f7f7;
+    }
+
+    .buy_item .add_btn {
+        border: solid 3px #333333;
+        cursor: pointer;
+        padding: 5px;
+        margin-left: 10px;
+    }
+
+    .buy_item .add_btn:hover {
+        background-color: #00394d;
+        color: #f3f7f7;
+    }
+
+    .control_panel {
+        padding: 20px;
+    }
+
+    .total {
+        background-color: #00394d;
+        color: #f3f7f7;
+    }
+
+    .total .price {
+        background-color: transparent;
+    }
+</style>
+
+<body>
+
+
+    <div id="buy_list">
+        <h1>MyBuyList 購物清單</h1>
+        <div class="buy_item control_panel">
+            <label>產品名</label>
+            <input id="input_name" placehoder="名稱..." />
+            <label>價錢</label>
+            <input id="input_price" placehoder="價錢..." /><span class="add_btn">+新增</span>
+        </div>
+        <div id="items_list"></div>
+    </div>
+    <script>
+        // 資料結構
+        //商品清單的物件
+        var shoplist = {};
+
+        var data_url = "http://www.monoame.com/awi_class/api/command.php?type=get&name=itemdata";
+
+        shoplist.name = "MyBuyList 購物清單";
+        shoplist.time = "2016/10/06";
+        //很多物件的陣列
+        shoplist.buy_item = [
+            // {name: "商品1", price: 100},
+            // {name: "商品2", price: 200},
+            // {name: "商品3", price: 300},
+            // {name: "商品4", price: 400}
+        ];
+
+        //動態生成item_list 的 html 模板
+        //html模板中，{{名稱}}代表要置換套入的地方
+        //初始的itemlist_html內的 " 要換成 '
+        //最後要生成：
+        // <li class="buy_item">1.吹風機
+        //    <div class="price">20000</div>
+        //    <div class="del_btn">X</div>
+        // </li>
+        var itemlist_html = "<li id='{{id}}' class='buy_item'>{{num}}.{{name}}<div class='price'>{{price}}</div><div data-del_id='{{id}}' class='del_btn' data-price='{{price}}' data-num='{{number}}'>X</div></li>";
+        //<div class='del_btn'>X</div> 會加一個動作
+
+        var total_html = "<li class='buy_item total' data-total='{{total_price}}'>總價<div id='total_price' class='price'>{{total_price}}</div></li>";
+
+        var total_price = 0;
+
+        $.ajax({
+            url: data_url,
+            success: function (res) {
+                shoplist.buy_item = JSON.parse(res);
+                showlist();
+            }
+        });
+
+        // showlist();
+
+        function append_new_item(i, item) {
+            var item_id = "buyitem_" + i;
+
+            total_price = total_price + parseInt(item.price);
+
+            var current_itemlist_html = itemlist_html.replace("{{id}}", item_id)
+                .replace("{{num}}", i + 1)
+                .replace("{{name}}", item.name)
+                .replace("{{price}}", item.price)
+                .replace("{{id}}", item_id)
+                .replace("{{price}}", item.price)
+                .replace("{{number}}", i);
+
+            $("#items_list").append(current_itemlist_html);
+        }
+
+        function append_total(total_html) {
+            var current_totalprice_html = total_html.replace("{{total_price}}", total_price)
+                .replace("{{total_price}}", total_price);
+
+            $("#items_list").append(current_totalprice_html);
+        }
+
+        function showlist() {
+            //在顯示清單前先清空舊清單
+            $("#items_list").html("");
+            //確保事件被清除
+            $(".del_btn").off('click');
+
+            total_price = 0;
+            //物件產生時，直接加總其金額
+            for (var i = 0; i < shoplist.buy_item.length; i++) {
+                var item = shoplist.buy_item[i];
+                //轉換成Int，因為值的預設都是字串
+                if (parseInt(item.price) >= 0) {
+                    append_new_item(i, item);
+                    //JS只有在html頁面上有東西時才抓得到東西
+                    //在append過後，已經會有.del_btn，id為 buyitem_i
+                }
+            }
+
+            //刪除一筆資料  
+            $(".del_btn").click(function () {
+                var del_id = $(this).data('del_id');
+                var this_price = $(this).data('price');
+                var number = $(this).data('num');
+
+                total_price -= this_price;
+                shoplist.buy_item.splice(number, 1);
+                //$(this).data('price').replace(total_price);
+
+                $(this).off('click');
+                $("#" + del_id).remove();
+                $("#total_price").text(total_price);
+                showlist();
+            });
+            append_total(total_html);
+        }
+
+        //動態新增產品物件
+        //按下"+新增"後觸發push的動作
+        //.click()，底層為.on("click",function(...));
+        $(".add_btn").click(function () {
+            //要讀取input的內容，因此必須給input一組id才能存取
+            //存取方式如下：
+            var item = undefined;
+            if ($("#input_name").val() != "" && $("#input_price").val() != "") {
+                item = {//.val()內沒給值，代表要 取 其值
+                    name: $("#input_name").val(),
+                    price: $("#input_price").val()
+                };
+            }
+            //資料送出後，便將資料清除
+            //.val("")，代表要 取代為 空字串
+            $("#input_name").val("");
+            $("#input_price").val("");
+
+            //更新清單 
+            if (item != undefined) {
+                var i = shoplist.buy_item.length;
+                var item_id = "buyitem_" + i;
+                shoplist.buy_item.push(item);
+
+                showlist();
+            }
+        });
+    </script>
+</body>
+
+</html>
