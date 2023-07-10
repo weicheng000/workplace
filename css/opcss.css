@@ -4,6 +4,9 @@
     font-family: 'Roboto Mono', 'Noto Serif TC', serif;
     box-sizing: border-box;
 }
+body{
+    background-image: url(./img/background/bgtest02.jpg);
+}
 
 li {
     list-style: none;
@@ -85,4 +88,8 @@ li {
         background-color: #FDBD10;
         color: #000;
     }
+}
+
+.red{
+    color: #EC1C24;
 }

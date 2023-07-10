@@ -4,13 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;700&family=Roboto+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/opcss.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
     <title>Menu</title>
     <style>
+        body {
+            background-image: url(./img/background/bgtest02.jpg);
+        }
+
         main {
             min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 98%;
+        }
+        article{
+            padding: 15px;
+        }
+
+        .swiper-control {
+            height: 300px;
+            width: 500px;
+
+            @media screen and (max-width : 500px) {
+                width: 380px;
+            }
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media screen and (max-width : 550px) {
+                flex-direction: column;
+            }
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 50%;
+            height: 50%;
+            object-fit: cover;
+
+            /* @media screen and (max-width : 922px) {
+                width: 68%;
+                height: 68%;
+            } */
+        }
+
+        .re-t {
+            margin-top: 2em;
+            margin-bottom: 2em;
+            background-color: rgba(255, 255, 255, .7);
+
+            @media screen and (max-width : 922px) {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .rwd::after {
+            content: '右邊';
+        }
+
+        @media screen and (max-width : 922px) {
+            .rwd::after {
+                content: '下面';
+            }
+        }
+
+        .re-b {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
@@ -20,11 +102,11 @@
         <header class="p-rl d-flex">
             <div class="head_left">
                 <ul class="head_list d-flex">
-                    <li class="h-b-style"><a href="#" class="btn-1">
+                    <li class="h-b-style"><a href="./about_us.html" class="btn-1">
                             <p>關於我們</p>
                             <p>About Us</p>
                         </a></li>
-                    <li class="h-b-style"><a href="#" class="btn-1">
+                    <li class="h-b-style"><a href="./menu.html" class="btn-1">
                             <p>菜單</p>
                             <p>Menu</p>
                         </a></li>
@@ -33,21 +115,21 @@
                             <p>News</p>
                         </a>
                         <ul class="drop_list">
-                            <li class="h-b-style"><a href="#" class="btn-1">
+                            <li class="h-b-style"><a href="./news.html" class="btn-1">
                                     <p>最新消息</p>
                                     <p>Last News</p>
                                 </a></li>
-                            <li class="h-b-style"><a href="#" class="btn-1">
+                            <li class="h-b-style"><a href="./news2.html" class="btn-1">
                                     <p>最新折扣</p>
                                     <p>Last Bonus</p>
                                 </a></li>
                         </ul>
                     </li>
-                    <li class="h-b-style"><a href="#" class="btn-1">
+                    <li class="h-b-style"><a href="./Reservation.html" class="btn-1 auto-hightlight">
                             <p>線上預訂</p>
                             <p>Reservation</p>
                         </a></li>
-                    <li class="h-b-style"><a href="#" class="btn-1">
+                    <li class="h-b-style"><a href="./login.html" class="btn-1">
                             <p>會員登入</p>
                             <p>Login</p>
                         </a></li>
@@ -65,8 +147,68 @@
         </header>
 
         <main>
-
-
+            <div class="re-t d-flex">
+                <article>
+                    <h1>
+                        預定內用
+                    </h1>
+                    <br>
+                    <p>
+                        本店座位有限，如有多人內用。歡迎使用本區塊進行預定。<br>
+                        我們的的預定有以下幾條規則，請在詳細閱讀後再進行預定。<br>
+                        預定座位將加收10%服務費。<br>
+                        只能預定一個用餐時段(中午/晚上)。<br>
+                        每個座位至少要有一份餐點。<br>
+                        需預先付款。<br>
+                        如有行程變動導致無法如約前來，將不退還服務費。<br>
+                        本店有三個區塊接受預訂，請看<span class="rwd"></span>進行預覽。<br>
+                    </p>
+                </article>
+                <div class="swiper-control">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="./img/item/rs-t-01.jpg" alt="">
+                                <p class="ms-1">日之間<br>適合1~4人</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide">
+                                    <img src="./img/item/rs-t-01.jpg" alt="">
+                                    <p class="ms-1">月之間<br>適合2~6人</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide">
+                                    <img src="./img/item/rs-t-01.jpg" alt="">
+                                    <p class="ms-1">星之間<br>適合1~2人</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="re-b">
+                <nav>
+                    <ul>
+                        <li class="red">Step.1 選擇時間</li>
+                        <li>Step.2 選擇區塊</li>
+                        <li>Step.3 預約餐點</li>
+                        <li>Step.4 線上付款</li>
+                    </ul>
+                </nav>
+                <form action="#">
+                    <h1>選擇時間</h1>
+                    <label for="member">用餐人數為: </label><input type="text" id="member"><br>
+                    <label for="date">訂餐時間為: </label><input type="date" id="date">
+                    <select id="date_range">
+                        <option>中午</option>
+                        <option>下午</option>
+                        <option>晚上</option>
+                    </select>
+                    <input type="submit">
+                </form>
+            </div>
         </main>
 
         <footer class="d-flex p-rl">
@@ -90,15 +232,15 @@
                 <ul class="d-flex">
                     <li class="flex-grow-1">
                         <ul>
-                            <li class="footer_type"><a href="#"" class=" footer_type">菜單</a></li>
-                            <li class="footer_type"><a href="#" class="footer_type">關於我們</a></li>
-                            <li class="footer_type"><a href="#" class="footer_type">最新消息</a></li>
+                            <li class="footer_type"><a href="./menu.html" class=" footer_type">菜單</a></li>
+                            <li class="footer_type"><a href="./about_us.html" class="footer_type">關於我們</a></li>
+                            <li class="footer_type"><a href="./news.html" class="footer_type">最新消息</a></li>
                         </ul>
                     </li>
                     <li class="flex-grow-1">
                         <ul>
-                            <li class="footer_type"><a href="#" class="footer_type">線上預訂</a></li>
-                            <li class="footer_type"><a href="#" class="footer_type">會員登錄</a></li>
+                            <li class="footer_type"><a href="./Reservation.html" class="footer_type">線上預訂</a></li>
+                            <li class="footer_type"><a href="./login.html" class="footer_type">會員登錄</a></li>
                             <li class="footer_type"><a href="#" class="footer_type">外送服務</a></li>
                         </ul>
                     </li>
@@ -116,6 +258,18 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/header.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            direction: "vertical",
+            slidesPerView: 1,
+            spaceBetween: 30,
+            mousewheel: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
 </body>
 
 </html>
