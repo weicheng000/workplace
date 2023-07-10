@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;700&family=Roboto+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./css/opcss.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
@@ -11,6 +14,66 @@
     <style>
         main {
             min-height: 50vh;
+            margin: 2em auto;
+        }
+
+        .as-top {
+            align-items: center;
+            gap: 1em;
+            background-color: rgba(255, 255, 255, .7);
+        }
+        .as-bottom{
+            background-color: #FDBD10;
+            padding: 2em 0;
+            @media screen and (max-width : 922px) {
+                flex-direction: column;
+                padding: 0 15px;
+            }
+        }
+
+        .intro {
+            width: 90%;
+
+            @media screen and (max-width: 922px) {
+                flex-direction: column;
+            }
+        }
+
+        .intro > img,
+        .intro > p {
+            width: 50%;
+            flex-grow: 1;
+
+            @media screen and (max-width: 922px) {
+                width: 95%;
+            }
+        }
+
+        .intro>img {
+            width: 25%;
+
+            @media screen and (max-width: 922px) {
+                width: 75%;
+            }
+        }
+
+        .intro>p {
+            margin-left: 30px;
+
+            @media screen and (max-width: 922px) {
+                margin-left: 0;
+                margin: 15px 0;
+            }
+        }
+        .as-bottom > img{
+            width: 30%;
+            height: 30%;
+            margin-top: 1em;
+            @media screen and (max-width: 922px) {
+                width: 50%;
+                height: 50%;
+                margin-bottom: 2em;
+            }
         }
     </style>
 </head>
@@ -20,11 +83,11 @@
         <header class="p-rl d-flex">
             <div class="head_left">
                 <ul class="head_list d-flex">
-                    <li class="h-b-style"><a href="#" class="btn-1">
+                    <li class="h-b-style"><a href="./about_us.html" class="btn-1">
                             <p>關於我們</p>
                             <p>About Us</p>
                         </a></li>
-                    <li class="h-b-style"><a href="#" class="btn-1">
+                    <li class="h-b-style"><a href="./menu.html" class="btn-1">
                             <p>菜單</p>
                             <p>Menu</p>
                         </a></li>
@@ -33,21 +96,21 @@
                             <p>News</p>
                         </a>
                         <ul class="drop_list">
-                            <li class="h-b-style"><a href="#" class="btn-1">
+                            <li class="h-b-style"><a href="./news.html" class="btn-1">
                                     <p>最新消息</p>
                                     <p>Last News</p>
                                 </a></li>
-                            <li class="h-b-style"><a href="#" class="btn-1">
+                            <li class="h-b-style"><a href="./news2.html" class="btn-1">
                                     <p>最新折扣</p>
                                     <p>Last Bonus</p>
                                 </a></li>
                         </ul>
                     </li>
-                    <li class="h-b-style"><a href="#" class="btn-1">
+                    <li class="h-b-style"><a href="./Reservation.html" class="btn-1">
                             <p>線上預訂</p>
                             <p>Reservation</p>
                         </a></li>
-                    <li class="h-b-style"><a href="#" class="btn-1">
+                    <li class="h-b-style"><a href="./login.html" class="btn-1">
                             <p>會員登入</p>
                             <p>Login</p>
                         </a></li>
@@ -65,8 +128,65 @@
         </header>
 
         <main>
-
-
+            <div class="as-top d-flex column">
+                <div class="d-flex flex-ja-c intro">
+                    <img src="./img/item/as-t-01.jpg" alt="">
+                    <p>在尋找快速、便捷的美食嗎？<br>
+                        擔心用餐時間結束後找不到地方吃飯嗎？<br>
+                        那選我們就對了！</p>
+                </div>
+                <div class="d-flex flex-ja-c intro">
+                    <img src="./img/item/as-t-02.jpg" alt="">
+                    <p>2020年是個特別的日子，因為在那一年，我們開幕了！<br>
+                        歡迎來到XX便當，一家致力於為您提供美味、營養且方便的便當店。<br>
+                        我們深知現代生活的忙碌與繁忙，因此我們的目標是為您節省時間，同時讓您享受到美味的餐點。<br>
+                        無論您是在辦公室、學校還是家中，我們都是您快速解決午餐或晚餐問題的最佳選擇。<br>
+                        我們提供方便的外帶服務，讓您輕鬆帶上一份美味的便當。<br>
+                        此外，我們也提供團體訂購和外送服務，以滿足您各種場合的需求。<br>
+                    </p>
+                </div>
+                <div class="d-flex flex-ja-c intro">
+                    <img src="./img/item/as-t-03.jpg" alt="">
+                    <p>我們是一家致力於提供快速、便捷美食的餐廳。<br>
+                        無論您是在忙碌的午餐時間或晚上外出用餐，我們都是您的最佳選擇。<br>
+                        我們提供各種口味的美食，從傳統的經典菜餚到創新的特色料理，滿足各種口味需求。<br>
+                        無論您是想要快速的外帶服務還是在舒適的用餐環境中享用美食，我們都能滿足您的需求。<br>
+                        選擇我們，您將品嚐到美味佳餚的同時，也能享受到便利和舒適。<br>
+                        快來一試，讓我們成為您的美食首選！</p>
+                </div>
+            </div>
+            <br>
+            <div class="as-bottom d-flex flex-ja-c">
+                <div>
+                    <h1>加入我們<br>Join Us</h1>
+                    <br>
+                    <p>
+                        尊敬的朋友：<br>
+                        您是否熱愛美食，擁有熱情和創意？現在是您展現才華的時刻！<br>
+                        我們正在尋找有才華和熱情的新成員加入我們的團隊。<br>
+                        如果您對美食充滿熱愛並渴望在一個友善和充滿活力的環境中工作，<br>
+                        那麼這份工作可能是您的夢想工作！<br>
+                        我們提供各種美味和健康的便當選擇，為客戶提供高品質的餐點。<br>
+                        作為一家尋求快速發展的店面，我們需要熱情且具有團隊精神的人才，<br>
+                        以確保我們能夠繼續為客戶提供卓越的服務和美味的食物。<br>
+                        <br>
+                        職位要求：<br>
+                        1.熱愛美食，對烹飪有濃厚的興趣和經驗<br>
+                        2.具有良好的團隊合作能力和溝通能力<br>
+                        3.勤奮、負責任和具有積極的工作態度<br>
+                        <br>
+                        職位福利：<br>
+                        1.具有競爭力的薪資待遇<br>
+                        2.彈性的工作時間安排<br>
+                        3.良好的工作環境和友善的團隊氛圍<br>
+                        4.提供培訓和晉升機會<br>
+                        <br>
+                        如果您認為自己具備以上條件，並渴望加入我們充滿活力的團隊，請立即聯絡我們！！<br>
+                        歡迎加入我們！期待能與您共同創造美味和快樂的用餐體驗！<br>
+                    </p>
+                </div>
+                <img src="./img/item/as-b-01.jpg" alt="">
+            </div>
         </main>
 
         <footer class="d-flex p-rl">
@@ -90,15 +210,15 @@
                 <ul class="d-flex">
                     <li class="flex-grow-1">
                         <ul>
-                            <li class="footer_type"><a href="#"" class=" footer_type">菜單</a></li>
-                            <li class="footer_type"><a href="#" class="footer_type">關於我們</a></li>
-                            <li class="footer_type"><a href="#" class="footer_type">最新消息</a></li>
+                            <li class="footer_type"><a href="./menu.html" class=" footer_type">菜單</a></li>
+                            <li class="footer_type"><a href="./about_us.html" class="footer_type">關於我們</a></li>
+                            <li class="footer_type"><a href="./news2.html" class="footer_type">最新消息</a></li>
                         </ul>
                     </li>
                     <li class="flex-grow-1">
                         <ul>
-                            <li class="footer_type"><a href="#" class="footer_type">線上預訂</a></li>
-                            <li class="footer_type"><a href="#" class="footer_type">會員登錄</a></li>
+                            <li class="footer_type"><a href="./Reservation.html" class="footer_type">線上預訂</a></li>
+                            <li class="footer_type"><a href="./login.html" class="footer_type">會員登錄</a></li>
                             <li class="footer_type"><a href="#" class="footer_type">外送服務</a></li>
                         </ul>
                     </li>
