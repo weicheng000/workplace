@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/weather.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app" class="container px-1 px-sm-4 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+            <div class="card text-center pt-4 border-0">
+                <h4 id="city_name" class="mb-0">{{ localName }}</h4>
+                <small id="district" class="text-muted mb-3">{{ areaName }}</small>
+                <h2 id="tempture" class="large-font">{{ test }} &#176;</h2>
+                <div class="text-center mt-3 mb-4">
+                    <img class="city-symbol" src="https://i.imgur.com/QA63I0q.png">
+                </div>
+                <div id="weekday" class="row d-flex px-3 mt-auto">
+                    <template v-for="(item, index) in temNum" :key="index">
+                        <template v-if="index%2==0 && 10 > index">
+                            <div class="d-flex flex-column block" :class="{
+                                'first-block': index === 0,
+                                'last-block': index === 8
+                            }">
+                                <small class="text-muted mb-0">{{ getWeekday(item.startTime) }}</small>
+                                <div class="text-center"><img class="symbol-img" src="https://i.imgur.com/BeWfUuG.png">
+                                </div>
+                                <h6><strong>{{ item.elementValue[0].value }}&#176;</strong></h6>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- <script src="js/weather.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module">
+        import { createApp, ref, reactive, onMounted } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+        const url = 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-055?Authorization=CWB-008E2628-53A3-4374-8332-2C446BB37C1A&format=JSON&elementName=T';
+
+        createApp({
+            setup() {
+                const data = reactive({
+                    weatherDate: '',
+                });
+                const localName = ref('');
+                const areaName = ref('');
+                const temNum = ref('');
+                const test = ref('');
+
+                onMounted(() => {
+                    axios.get(url)
+                        .then((res) => {
+                            console.log(res.data);
+                            data.weatherDate = res.data;
+                            localName.value = data.weatherDate.records.locations[0].locationsName;
+                            areaName.value = data.weatherDate.records.locations[0].location[0].locationName;
+                            temNum.value = data.weatherDate.records.locations[0].location[0].weatherElement[0].time;
+                            test.value = temNum.value[0].elementValue[0].value;
+                        })
+                });
+
+                const getWeekday = function (dateTimeString) {
+                    const date = new Date(dateTimeString);
+                    const days = ['日', '一', '二', '三', '四', '五', '六'];
+                    const dayOfWeek = days[date.getDay()];
+                    return `星期${dayOfWeek}`;
+                };
+
+
+
+                return {
+                    data,
+                    localName,
+                    areaName,
+                    temNum,
+                    test,
+                    getWeekday
+                }
+            }
+        }).mount('#app')
+
+
+    </script>
+</body>
+
+</html>
