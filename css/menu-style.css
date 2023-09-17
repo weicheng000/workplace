@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+  }
+
 body{
     background-color: #efefef;
 }
@@ -136,4 +140,8 @@ hr {
 .menu-card {
     width: 100%;
     margin-bottom: 15px;
+}
+
+.navItem {
+    text-decoration: none;
 }

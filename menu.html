@@ -72,24 +72,34 @@
                 <nav class="left_block">
                     <ul class="list">
                         <li class="select -on">
-                            <p>經典風味</p>
-                            <p>Classic</p>
+                            <a href="#scroll0" class="navItem">
+                                <p>經典風味</p>
+                                <p>Classic</p>
+                            </a>
                         </li>
                         <li class="select">
-                            <p>港式燒臘</p>
-                            <p>Hong Kong</p>
+                            <a href="#scroll1" class="navItem">
+                                <p>港式燒臘</p>
+                                <p>Hong Kong</p>
+                            </a>
                         </li>
                         <li class="select">
-                            <p>日式風情</p>
-                            <p>Japanese</p>
+                            <a href="#scroll2" class="navItem">
+                                <p>日式風情</p>
+                                <p>Japanese</p>
+                            </a>
                         </li>
                         <li class="select">
-                            <p>湯點飲品</p>
-                            <p>Soup&Drink</p>
+                            <a href="#scroll3" class="navItem">
+                                <p>湯點飲品</p>
+                                <p>Soup&Drink</p>
+                            </a>
                         </li>
                         <li class="select">
-                            <p>小菜</p>
-                            <p>Side Dish</p>
+                            <a href="#scroll4" class="navItem">
+                                <p>小菜</p>
+                                <p>Side Dish</p>
+                            </a>
                         </li>
                         <hr>
                         <li class="select">
@@ -102,288 +112,25 @@
                 <!-- main side -->
                 <section class="right_block" id="scroll_block">
 
-                    <ul class="each_block">
+                    <ul class="each_block" v-for="(item, index) in list" :id="'scroll' + index" :key="index">
                         <li class="title">
                             <h1>
-                                經典風味<br>Classic
+                                {{ item.listTCName }}<br>{{ item.listEnName }}
                             </h1>
                         </li>
 
-                        <li class="menu-card">
+                        <li class="menu-card" v-for="(menu, index) in item.listItem" :key="index">
                             <div class="row col-12 cardStyle">
                                 <div class="col-12">
                                     <div class="row flex-a-c justify-space-between">
-                                        <p>台式滷肉飯<br>Braised Pork</p>
-                                        <p>NTD 080</p>
+                                        <p>{{ menu.productTCName }}<br>{{ menu.productEnName }}</p>
+                                        <p>NTD {{ menu.price }}</p>
                                     </div>
                                 </div>
                             </div>
                             <counter></counter>
-
-                        </li>
-                        <!-- 
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li>
-
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li>
-
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li> -->
-
-                    </ul>
-
-                    <!-- <ul data-id="link2" class="each_block">
-                        <li>
-                            <h1>
-                                經典風味<br>Classic
-                            </h1>
-                        </li>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li>
                         </li>
                     </ul>
-                    
-                    <ul data-id="link3" class="each_block">
-                        <li>
-                            <h1>
-                                經典風味<br>Classic
-                            </h1>
-                        </li>
-                        <li class="menu-card" class="each_block">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li>
-                        </li>
-                    </ul>
-                    <ul data-id="link4" class="each_block">
-                        <li>
-                            <h1>
-                                經典風味<br>Classic
-                            </h1>
-                        </li>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li>
-                        </li>
-                    </ul>
-                    <ul data-id="link5" class="each_block">
-                        <li>
-                            <h1>
-                                經典風味<br>Classic
-                            </h1>
-                        </li>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li>
-                        </li>
-                    </ul> -->
 
                     <div class="menu-cart"></div>
                 </section>
@@ -439,19 +186,85 @@
     <script src="./js/header.js"></script>
     <script src="./js/menu-style.js"></script>
     <script type="module">
-        import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+        import { createApp, ref, reactive } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
         import counter from './js/compoents/counter.js'
 
         createApp({
             setup() {
-                const message = ref('Hello Vue!')
+                const list = reactive(
+                    [
+                        {
+                            listTCName: '經典風味',
+                            listEnName: 'Classic',
+                            listItem: [
+                                {
+                                    productTCName: '台式滷肉飯',
+                                    productEnName: 'Classic',
+                                    price: 80
+                                },
+                                {
+                                    productTCName: '台式爌肉飯',
+                                    productEnName: 'Classic',
+                                    price: 120
+                                }
+                            ]
+                        },
+                        {
+                            listTCName: '港式燒臘',
+                            listEnName: 'Hong Kong',
+                            listItem: [
+                                {
+                                    productTCName: '三寶飯',
+                                    productEnName: 'Classic',
+                                    price: 130
+                                }
+                            ]
+                        },
+                        {
+                            listTCName: '日式風情',
+                            listEnName: 'Japanese',
+                            listItem: [
+                                {
+                                    productTCName: '唐揚雞腿飯',
+                                    productEnName: 'Classic',
+                                    price: 90
+                                }
+                            ]
+                        },
+                        {
+                            listTCName: '湯點飲品',
+                            listEnName: 'Soup&Drink',
+                            listItem: [
+                                {
+                                    productTCName: '四神湯',
+                                    productEnName: 'Classic',
+                                    price: 60
+                                }
+                            ]
+                        },
+                        {
+                            listTCName: '小菜',
+                            listEnName: 'Side Dish',
+                            listItem: [
+                                {
+                                    productTCName: '滷海帶',
+                                    productEnName: 'Classic',
+                                    price: 30
+                                }
+                            ]
+                        },
+                    ]
+                )
+
+
+
                 return {
-                    message
+                    list
                 }
             }
         })
-        .component('counter', counter)
-        .mount('#menu')
+            .component('counter', counter)
+            .mount('#menu')
 
     </script>
 </body>

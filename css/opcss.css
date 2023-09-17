@@ -61,33 +61,42 @@ li {
 .flex-a-c{
     align-items: center;
 }
+
 .flex-ja-c{
     justify-content: center;
     align-items: center;
 }
+
 .ms-1{
     margin-left: 15px;
 }
+
 .mt-1{
     margin-top: 1em;
 }
+
 .mt-2{
     margin-top: 2em;
 }
+
 .mb-1{
     margin-bottom: 1em;
 }
+
 .fz-1{
+    
     font-size: 1.5em;
 }
 .fb{
     font-weight: bold;
 }
+
 .title_style{
     font-size: 2em;
     font-weight: bold;
     letter-spacing: 0.2em;
 }
+
 .text-align-c{
     text-align: center;
 }
