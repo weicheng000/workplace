@@ -1,8 +1,8 @@
 import { ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
 
 export default {
-name: 'MenuList',
-template: `
+    name: 'MenuList',
+    template: `
 <nav class="left_block">
     <ul class="list">
         <li class="select" :class="toggleClass[0] ? '-on': ''" @click="change(0)">
@@ -45,17 +45,17 @@ template: `
     </ul>
 </nav>
 `,
-setup() {
-const toggleClass = ref([true, false, false, false, false]);
+    setup() {
+        const toggleClass = ref([true, false, false, false, false]);
 
-const change = function ChangeTheClassCssAttribute(index) {
-toggleClass.value = Array(5).fill(false);
-toggleClass.value[index] = true;
-};
+        const change = function ChangeTheClassCssAttribute(index) {
+            toggleClass.value = Array(5).fill(false);
+            toggleClass.value[index] = true;
+        };
 
-return {
-toggleClass,
-change
-}
-}
+        return {
+            toggleClass,
+            change
+        }
+    }
 }

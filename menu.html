@@ -15,59 +15,12 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="menu">
         <!-- header -->
-        <header class="p-rl d-flex">
-            <div class="head_left">
-                <ul class="head_list d-flex">
-                    <li class="h-b-style"><a href="./about_us.html" class="btn-1">
-                            <p>關於我們</p>
-                            <p>About Us</p>
-                        </a></li>
-                    <li class="h-b-style"><a href="./menu.html" class="btn-1">
-                            <p>菜單</p>
-                            <p>Menu</p>
-                        </a></li>
-                    <li class="h-b-style p-rl"><a href="#" class="btn-1">
-                            <p>最新消息</p>
-                            <p>News</p>
-                        </a>
-                        <ul class="drop_list">
-                            <li class="h-b-style"><a href="./news.html" class="btn-1">
-                                    <p>最新消息</p>
-                                    <p>Last News</p>
-                                </a></li>
-                            <li class="h-b-style"><a href="./news2.html" class="btn-1">
-                                    <p>最新折扣</p>
-                                    <p>Last Bonus</p>
-                                </a></li>
-                        </ul>
-                    </li>
-                    <li class="h-b-style"><a href="./Reservation.html" class="btn-1">
-                            <p>線上預訂</p>
-                            <p>Reservation</p>
-                        </a></li>
-                    <li class="h-b-style"><a href="./login.html" class="btn-1">
-                            <p>會員登入</p>
-                            <p>Login</p>
-                        </a></li>
-                </ul>
-            </div>
-            <div class="head_right p-ab">
-                <picture>
-                    <source media="(max-width: 922px)" srcset="img/icon/logo-small.png" />
-                    <img src="./img/icon/logo.svg" alt="Horses in Hawaii">
-                </picture>
-            </div>
-            <div class="burger">
-                <img src="./img/icon/Menuburger.svg" alt="">
-            </div>
-        </header>
+        <top></top>
 
         <!-- body -->
-        <main id="menu">
-
-
+        <main>
             <!-- left side -->
             <div class="sticker row" id="navBar">
                 <menu-list></menu-list>
@@ -119,45 +72,7 @@
 
 
         </main>
-        <footer class="d-flex p-rl">
-            <div class="flex-grow-1 worktime">
-                <ul>
-                    <li class="footer_type">營業時間 Our Hours</li>
-                    <li class="footer_type">禮拜二 到 禮拜五 / <span></span> 早上 11點 到 晚上 8點</li>
-                    <li class="footer_type">禮拜六 跟 禮拜天 / <span></span>早上 10點 到 晚上 9點</li>
-                    <li class="footer_type">禮拜一 公休</li>
-                </ul>
-            </div>
-            <div class="flex-grow-1 address">
-                <ul>
-                    <li class="instagram d-flex flex-a-c footer_type"><img src="img/icon/instagram.png" alt=""></li>
-                    <li class="footer_type">台北市南京東路120號</li>
-                    <li class="footer_type">02-85696678</li>
-                    <li class="footer_type">logorestaurant@gmail.com</li>
-                </ul>
-            </div>
-            <div class="flex-grow-1">
-                <ul class="d-flex">
-                    <li class="flex-grow-1">
-                        <ul>
-                            <li class="footer_type"><a href="./menu.html" class=" footer_type">菜單</a></li>
-                            <li class="footer_type"><a href="./about_us.html" class="footer_type">關於我們</a></li>
-                            <li class="footer_type"><a href="./news.html" class="footer_type">最新消息</a></li>
-                        </ul>
-                    </li>
-                    <li class="flex-grow-1">
-                        <ul>
-                            <li class="footer_type"><a href="./Reservation.html" class="footer_type">線上預訂</a></li>
-                            <li class="footer_type"><a href="./login.html" class="footer_type">會員登錄</a></li>
-                            <li class="footer_type"><a href="#" class="footer_type">外送服務</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="p-ab alert">
-                <p class="footer_type">本網站為緯育TibaMe【第85期】前端工程師專業技術養成班學員作品,僅供學習、展示之用途。</p>
-            </div>
-        </footer>
+        <foot></foot>
     </div>
 
 
@@ -172,13 +87,17 @@
     <script src="./js/menu-style.js"></script>
     <script type="module">
         import { createApp, ref, reactive } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
-        import counter from './js/compoents/counter.js';
-        import MenuList from './js/compoents/MenuList.js';
+        import counter from './js/components/counter.js';
+        import MenuList from './js/components/MenuList.js';
+        import Top from './js/components/Top.js';
+        import Foot from './js/components/Foot.js'
 
         createApp({
             components: {
                 counter,
-                MenuList
+                MenuList,
+                Top,
+                Foot
             },
             setup() {
                 const list = reactive(
