@@ -1,3 +1,5 @@
+import { getCurrentInstance } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+
 export default {
     name: 'Top',
     template: `
@@ -31,7 +33,7 @@ export default {
                     <p>線上預訂</p>
                     <p>Reservation</p>
                 </a></li>
-            <li class="h-b-style"><a href="./login.html" class="btn-1">
+            <li class="h-b-style"><a class="btn-1" @click="triggerLoginModal">
                     <p>會員登入</p>
                     <p>Login</p>
                 </a></li>
@@ -51,8 +53,14 @@ export default {
 </header>
 `,
     setup() {
-        return {
+        const { emit } = getCurrentInstance();
 
+        const triggerLoginModal = () => {
+            // 觸發自定義事件
+            emit('show-login-modal');
+        };
+        return {
+            triggerLoginModal,
         }
     }
 }

@@ -59,6 +59,8 @@ nav {
 .select{
     width: 100%;
     cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .select > a {
@@ -70,11 +72,13 @@ nav {
 .select:hover{
     background-color: #0066B2;
     color: white;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
 }
 
 .select.-on{
     background-color: #0066B2;
     color: white;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
 }
 
 section {

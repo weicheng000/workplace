@@ -186,3 +186,29 @@ footer {
         white-space: pre;
     }
 }
+
+/* modal */
+
+.target{
+    margin-bottom: 1em;
+}
+
+.modalTitle{
+    box-sizing: content-box;
+    padding: 0.5em;
+}
+
+.modalInput{
+    width: 100%;
+    height: 4em;
+    border-radius: 8px;
+    padding: 0 0.75em;
+    border: 4px solid #0066B2;
+    margin-top: 0.75em;
+    background-color: rgb(234, 213, 155);
+}
+
+.modalInput:focus{
+    outline: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

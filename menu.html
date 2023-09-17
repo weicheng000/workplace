@@ -11,12 +11,65 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/menu-style.css">
     <title>Menu</title>
+    <style>
+        .modalBase {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 15;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .modalPage {
+            width: 100%;
+            height: 600px;
+            background-color: #FDBD10;
+            border-radius: 8px;
+            padding: 1.5em;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container" id="menu">
         <!-- header -->
-        <top></top>
+        <top @show-login-modal="openLoginModal"></top>
+
+        <!-- modal -->
+        <template v-if="loginModal">
+            <div class="modalBase" @click="openLoginModal">
+                <div class="modalPage" @click.stop>
+                    <div class="target">
+                        <ul class="row">
+                            <li class="select modalTitle">
+                                <h1>會員登入 Login</h1>
+                            </li>
+                            <li class="select modalTitle">
+                                <h1>註冊會員 Create</h1>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div>
+                            <label for="account">帳號 ( Account ) :</label>
+                            <input type="text" id="account" class="modalInput">
+                        </div>
+                        <div>
+                            <label for="pwsede">密碼 ( password ) :</label>
+                            <input type="password" id="pwsede" class="modalInput">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </template>
 
         <!-- body -->
         <main>
@@ -184,7 +237,7 @@
                             x: -200,
                             duration: 0.5,
                         });
-                    }else{
+                    } else {
                         gsap.to('#navBar', {
                             x: 0,
                             duration: 0.5,
@@ -193,10 +246,18 @@
                     show.value = !show.value;
                 }
 
+                const loginModal = ref(false);
+
+                const openLoginModal = () => {
+                    loginModal.value = !loginModal.value;
+                };
+
                 return {
                     list,
                     show,
-                    toggle
+                    toggle,
+                    loginModal,
+                    openLoginModal
                 }
             }
         }).mount('#menu')

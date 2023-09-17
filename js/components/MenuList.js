@@ -35,7 +35,6 @@ export default {
                 <p>Side Dish</p>
             </a>
         </li>
-        <hr>
         <li class="select">
             <a>
                 <p>購物車</p>
