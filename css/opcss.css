@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url(./img/background/bgtest02.jpg);
+    /* background-image: url(./img/background/bgtest02.jpg); */
 }
 
 li {
@@ -35,6 +35,15 @@ li {
     background-color: #0066B2;
     color: #fff;
 }
+
+.row{
+    display: flex;
+}
+
+.col-12 {
+    width: 100%;
+}
+
 .flex-grow-1{
     flex-grow: 1;
 }
@@ -44,6 +53,11 @@ li {
 .flex-j-c{
     justify-content: center;
 }
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
 .flex-a-c{
     align-items: center;
 }

@@ -1,5 +1,5 @@
 //總頁數
-var total = 20;
+let total = 20;
 $(function () {
     makePage(total, 1);
 });

@@ -12,18 +12,11 @@
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/menu-style.css">
     <title>Menu</title>
-    <style>
-        body {
-            background-image: url(./img/background/bgtest02.jpg);
-        }
-        main {
-            min-height: 50vh;
-        }
-    </style>
 </head>
 
 <body>
     <div class="container">
+        <!-- header -->
         <header class="p-rl d-flex">
             <div class="head_left">
                 <ul class="head_list d-flex">
@@ -70,40 +63,107 @@
                 <img src="./img/icon/Menuburger.svg" alt="">
             </div>
         </header>
-        <main>
+
+        <!-- body -->
+        <main id="menu">
             <div class="menu-container parent_block">
+
+                <!-- left side -->
                 <nav class="left_block">
                     <ul class="list">
-                        <li><a href="#" class="menu-btn nav-btn link -on" id="link1">
-                                <p>經典風味</p>
-                                <p>Classic</p>
-                            </a></li>
-                        <li><a href="#" class="menu-btn nav-btn link" id="link2">
-                                <p>港式燒臘</p>
-                                <p>Hong Kong</p>
-                            </a></li>
-                        <li><a href="#" class="menu-btn nav-btn link" id="link3">
-                                <p>日式風情</p>
-                                <p>Japanese</p>
-                            </a></li>
-                        <li><a href="#" class="menu-btn nav-btn link" id="link4">
-                                <p>湯點飲品</p>
-                                <p>Soup&Drink</p>
-                            </a></li>
-                        <li><a href="#" class="menu-btn nav-btn link" id="link5">
-                                <p>小菜</p>
-                                <p>Side Dish</p>
-                            </a></li>
+                        <li class="select -on">
+                            <p>經典風味</p>
+                            <p>Classic</p>
+                        </li>
+                        <li class="select">
+                            <p>港式燒臘</p>
+                            <p>Hong Kong</p>
+                        </li>
+                        <li class="select">
+                            <p>日式風情</p>
+                            <p>Japanese</p>
+                        </li>
+                        <li class="select">
+                            <p>湯點飲品</p>
+                            <p>Soup&Drink</p>
+                        </li>
+                        <li class="select">
+                            <p>小菜</p>
+                            <p>Side Dish</p>
+                        </li>
+                        <hr>
+                        <li class="select">
+                            <p>購物車</p>
+                            <p>Cart</p>
+                        </li>
                     </ul>
-                    <hr>
-                    <a href="#" class="menu-btn">
-                        <p>購物車</p>
-                        <p>Cart</p>
-                    </a>
                 </nav>
+
+                <!-- main side -->
                 <section class="right_block" id="scroll_block">
 
-                    <ul data-id="link1" class="each_block">
+                    <ul class="each_block">
+                        <li class="title">
+                            <h1>
+                                經典風味<br>Classic
+                            </h1>
+                        </li>
+
+                        <li class="menu-card">
+                            <div class="row col-12 cardStyle">
+                                <div class="col-12">
+                                    <div class="row flex-a-c justify-space-between">
+                                        <p>台式滷肉飯<br>Braised Pork</p>
+                                        <p>NTD 080</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <counter></counter>
+
+                        </li>
+                        <!-- 
+                        <li class="menu-card">
+
+                            <p>台式滷肉飯<br>Braised Pork</p>
+                            <p>NTD 080</p>
+
+                            <form action="#" class="card-form">
+                                <input type="button" value="+" class="count-btn plus">
+                                <input type="number" min="0" value="0" class="count-number">
+                                <input type="button" value="-" class="count-btn minus">
+                                <input type="submit" value="OK!" class="count-submit">
+                            </form>
+                        </li>
+
+                        <li class="menu-card">
+
+                            <p>台式滷肉飯<br>Braised Pork</p>
+                            <p>NTD 080</p>
+
+                            <form action="#" class="card-form">
+                                <input type="button" value="+" class="count-btn plus">
+                                <input type="number" min="0" value="0" class="count-number">
+                                <input type="button" value="-" class="count-btn minus">
+                                <input type="submit" value="OK!" class="count-submit">
+                            </form>
+                        </li>
+
+                        <li class="menu-card">
+
+                            <p>台式滷肉飯<br>Braised Pork</p>
+                            <p>NTD 080</p>
+
+                            <form action="#" class="card-form">
+                                <input type="button" value="+" class="count-btn plus">
+                                <input type="number" min="0" value="0" class="count-number">
+                                <input type="button" value="-" class="count-btn minus">
+                                <input type="submit" value="OK!" class="count-submit">
+                            </form>
+                        </li> -->
+
+                    </ul>
+
+                    <!-- <ul data-id="link2" class="each_block">
                         <li>
                             <h1>
                                 經典風味<br>Classic
@@ -158,61 +218,7 @@
                         </li>
                         </li>
                     </ul>
-                    <ul data-id="link2" class="each_block">
-                        <li>
-                            <h1>
-                                經典風味<br>Classic
-                            </h1>
-                        </li>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li>
-                        <li class="menu-card">
-
-                            <p>台式滷肉飯<br>Braised Pork</p>
-                            <p>NTD 080</p>
-
-                            <form action="#" class="card-form">
-                                <input type="button" value="+" class="count-btn plus">
-                                <input type="number" min="0" value="0" class="count-number">
-                                <input type="button" value="-" class="count-btn minus">
-                                <input type="submit" value="OK!" class="count-submit">
-                            </form>
-                        </li>
-                        </li>
-                    </ul>
+                    
                     <ul data-id="link3" class="each_block">
                         <li>
                             <h1>
@@ -377,7 +383,7 @@
                             </form>
                         </li>
                         </li>
-                    </ul>
+                    </ul> -->
 
                     <div class="menu-cart"></div>
                 </section>
@@ -432,6 +438,22 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/header.js"></script>
     <script src="./js/menu-style.js"></script>
+    <script type="module">
+        import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+        import counter from './js/compoents/counter.js'
+
+        createApp({
+            setup() {
+                const message = ref('Hello Vue!')
+                return {
+                    message
+                }
+            }
+        })
+        .component('counter', counter)
+        .mount('#menu')
+
+    </script>
 </body>
 
 </html>
