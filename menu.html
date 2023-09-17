@@ -66,75 +66,57 @@
 
         <!-- body -->
         <main id="menu">
-            <div class="menu-container parent_block">
 
-                <!-- left side -->
-                <nav class="left_block">
-                    <ul class="list">
-                        <li class="select -on">
-                            <a href="#scroll0" class="navItem">
-                                <p>經典風味</p>
-                                <p>Classic</p>
-                            </a>
-                        </li>
-                        <li class="select">
-                            <a href="#scroll1" class="navItem">
-                                <p>港式燒臘</p>
-                                <p>Hong Kong</p>
-                            </a>
-                        </li>
-                        <li class="select">
-                            <a href="#scroll2" class="navItem">
-                                <p>日式風情</p>
-                                <p>Japanese</p>
-                            </a>
-                        </li>
-                        <li class="select">
-                            <a href="#scroll3" class="navItem">
-                                <p>湯點飲品</p>
-                                <p>Soup&Drink</p>
-                            </a>
-                        </li>
-                        <li class="select">
-                            <a href="#scroll4" class="navItem">
-                                <p>小菜</p>
-                                <p>Side Dish</p>
-                            </a>
-                        </li>
-                        <hr>
-                        <li class="select">
-                            <p>購物車</p>
-                            <p>Cart</p>
-                        </li>
-                    </ul>
-                </nav>
 
-                <!-- main side -->
-                <section class="right_block" id="scroll_block">
+            <!-- left side -->
+            <div class="sticker row" id="navBar">
+                <menu-list></menu-list>
+                <button type="button" @click="toggle()" class="navButton" :class="show ? 'rotate': ''">
+                    +
+                </button>
+            </div>
 
-                    <ul class="each_block" v-for="(item, index) in list" :id="'scroll' + index" :key="index">
-                        <li class="title">
+
+            <!-- main side -->
+            <section class="right_block">
+
+                <div class="each_block" v-for="(item, index) in list" :id="'scroll' + index" :key="index">
+                    <div>
+                        <div class="title">
                             <h1>
                                 {{ item.listTCName }}<br>{{ item.listEnName }}
                             </h1>
-                        </li>
-
-                        <li class="menu-card" v-for="(menu, index) in item.listItem" :key="index">
-                            <div class="row col-12 cardStyle">
-                                <div class="col-12">
-                                    <div class="row flex-a-c justify-space-between">
-                                        <p>{{ menu.productTCName }}<br>{{ menu.productEnName }}</p>
-                                        <p>NTD {{ menu.price }}</p>
+                        </div>
+                        <div v-for="(menu, index) in item.listItem" :key="index" class="menu-card">
+                            <div class="row col-12">
+                                <div class="row col-12 cardStyle">
+                                    <div class="col-12">
+                                        <div class="row flex-a-c justify-space-between">
+                                            <p>{{ menu.productTCName }}<br>{{ menu.productEnName }}</p>
+                                            <p>NTD {{ menu.price }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <counter></counter>
+                            </div>
+                            <div class="col-12 introSection">
+                                <div class="row">
+                                    <div class="imgLimit">
+                                        <img :src="menu.imgUrl" :alt="menu.productEnName">
+                                    </div>
+                                    <div>
+                                        <p>{{ menu.intro }}</p>
                                     </div>
                                 </div>
                             </div>
-                            <counter></counter>
-                        </li>
-                    </ul>
+                        </div>
 
-                    <div class="menu-cart"></div>
-                </section>
-            </div>
+                    </div>
+                </div>
+
+                <div class="menu-cart"></div>
+            </section>
+
 
         </main>
         <footer class="d-flex p-rl">
@@ -183,13 +165,21 @@
         integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./js/header.js"></script>
     <script src="./js/menu-style.js"></script>
     <script type="module">
-        import { createApp, ref, reactive } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
-        import counter from './js/compoents/counter.js'
+        import { createApp, ref, reactive } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+        import counter from './js/compoents/counter.js';
+        import MenuList from './js/compoents/MenuList.js';
 
         createApp({
+            components: {
+                counter,
+                MenuList
+            },
             setup() {
                 const list = reactive(
                     [
@@ -198,14 +188,18 @@
                             listEnName: 'Classic',
                             listItem: [
                                 {
-                                    productTCName: '台式滷肉飯',
+                                    productTCName: '台式豬腳飯',
                                     productEnName: 'Classic',
-                                    price: 80
+                                    price: 130,
+                                    imgUrl: './img/item/zhujiaofan.jpg',
+                                    intro: '台式豬腳飯是台灣傳統的美食之一，深受當地居民和遊客喜愛。這道美食以精選的豬腳為主要食材，搭配獨特的調味醬汁，讓人回味無窮。每一片豬腳都經過緩慢燉煮，肉質鮮嫩多汁，入口即化。豬腳與米飯的結合完美平衡了口感，豐富的膠質使這道菜更加美味。最後，撒上一些香菜和蒜末，增添了風味的層次感。無論是當地居民還是遊客，都不容錯過這道道地的台灣美食。'
                                 },
                                 {
                                     productTCName: '台式爌肉飯',
                                     productEnName: 'Classic',
-                                    price: 120
+                                    price: 120,
+                                    imgUrl: './img/item/zhujiaofan.jpg',
+                                    intro: '台式爌肉飯是台灣的經典美食之一，以其濃郁的口味和香氣而聞名。這道料理以豬肉和五花肉為主要食材，經過慢火燉煮，使肉塊變得軟嫩多汁，滲透著豐富的醬汁。爌肉的調味料包括醬油、糖、香料和香菜，這些成分共同賦予它特有的風味。爌肉飯通常搭配白米飯，這樣可以平衡濃郁的口味，讓食物更加美味。每一口都是一種滋味的享受，激發了味蕾的滿足感。這道台灣經典美食總是吸引著食客們，無論是當地居民還是遊客，都難以抗拒其美味誘惑。'
                                 }
                             ]
                         },
@@ -216,7 +210,9 @@
                                 {
                                     productTCName: '三寶飯',
                                     productEnName: 'Classic',
-                                    price: 130
+                                    price: 130,
+                                    imgUrl: './img/item/huajifan.jpg',
+                                    intro: '港式燒臘飯是一道源自香港的美食經典。這道菜以精選的燒臘為主，包括燒鴨、燒豬、燒乳豬等多種口味。這些肉類在烹飪過程中保持了外酥內嫩的特點，搭配獨特的醬汁，散發著誘人的香氣。一碗港式燒臘飯通常伴隨著香氣四溢的白飯，搭配濃郁的燒臘肉片和豐富的燒臘汁。這種組合為食客帶來了極致的口味享受，每一口都充滿了滿足感。港式燒臘飯不僅在香港受歡迎，也已經成為世界各地食客喜愛的一道美食，它獨特的風味讓人難以忘懷。'
                                 }
                             ]
                         },
@@ -227,7 +223,9 @@
                                 {
                                     productTCName: '唐揚雞腿飯',
                                     productEnName: 'Classic',
-                                    price: 90
+                                    price: 90,
+                                    imgUrl: './img/item/huajifan.jpg',
+                                    intro: '唐揚雞腿飯是一道美味的亞洲料理，它的特色在於金黃酥脆的唐揚雞腿。這款料理的主要原料是雞腿肉，首先用特製的調味醬汁腌製，然後沾上麵粉裹上一層薄薄的麵衣，最後油炸至酥脆。這種製作方式使雞肉保持了內外的鮮嫩和多汁。唐揚雞腿飯通常搭配蒸熟的白飯，以及一些蔬菜和配菜，例如捲心菜、紅蘿蔔和芥末醬。這樣的搭配使得這道菜既有著香酥的口感，又帶有微微的辣味和清新的蔬菜風味。無論是在家用餐還是外出用餐，唐揚雞腿飯都是一道令人垂涎的選擇。'
                                 }
                             ]
                         },
@@ -238,7 +236,9 @@
                                 {
                                     productTCName: '四神湯',
                                     productEnName: 'Classic',
-                                    price: 60
+                                    price: 60,
+                                    imgUrl: './img/item/xiajuanfan.jpg',
+                                    intro: '四神湯是一道中國傳統的滋補燉湯，由人參、淮山、枸杞子和無花果等四種珍貴成分製成。經長時間燉煮後，湯品濃郁而營養豐富。人參補氣養血，淮山滋陰潤燥，枸杞子富含維生素和抗氧化劑，無花果有助調節腸胃。四神湯被視為中國滋補飲食文化的代表之一，常在寒冷季節或體虛時享用，有助增強免疫力和體力恢復。'
                                 }
                             ]
                         },
@@ -247,24 +247,41 @@
                             listEnName: 'Side Dish',
                             listItem: [
                                 {
-                                    productTCName: '滷海帶',
+                                    productTCName: '滷白菜',
                                     productEnName: 'Classic',
-                                    price: 30
+                                    price: 30,
+                                    imgUrl: './img/item/jidanfan.jpg',
+                                    intro: '滷白菜是一道中國傳統的滷菜，以白菜為主要食材。製作過程中，白菜會被切成段或一片片，然後放入特製的滷汁中，滷至入味。滷汁通常包括醬油、糖、香料和香草，經過時間的滷製，白菜吸收了滷汁的風味，變得香嫩可口。這道菜色澤鮮豔，風味獨特，是中國滷菜中的經典之一，常見於家常飯桌和餐廳餐單中。'
                                 }
                             ]
                         },
                     ]
                 )
 
+                const show = ref(true);
 
+                const toggle = function changeNavBarStatus() {
+                    if (show.value === true) {
+                        gsap.to('#navBar', {
+                            x: -200,
+                            duration: 0.5,
+                        });
+                    }else{
+                        gsap.to('#navBar', {
+                            x: 0,
+                            duration: 0.5,
+                        });
+                    }
+                    show.value = !show.value;
+                }
 
                 return {
-                    list
+                    list,
+                    show,
+                    toggle
                 }
             }
-        })
-            .component('counter', counter)
-            .mount('#menu')
+        }).mount('#menu')
 
     </script>
 </body>
