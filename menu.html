@@ -43,8 +43,8 @@
                             </h1>
                         </div>
                         <div v-for="(menu, index) in item.listItem" :key="index" class="menu-card">
-                            <div class="row col-12">
-                                <div class="row col-12 cardStyle">
+                            <div class="row col-12 cardStyle">
+                                <div class="row col-12">
                                     <div class="col-12">
                                         <div class="row flex-a-c justify-space-between">
                                             <p>{{ menu.productTCName }}<br>{{ menu.productEnName }}</p>
@@ -52,10 +52,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <counter></counter>
+                                <div class="counterStyle">
+                                    <counter></counter>
+                                </div>
                             </div>
                             <div class="col-12 introSection">
-                                <div class="row">
+                                <div class="row productComment">
                                     <div class="imgLimit">
                                         <img :src="menu.imgUrl" :alt="menu.productEnName">
                                     </div>
@@ -91,7 +93,6 @@
         import { createApp, ref, reactive } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
         import counter from './js/components/counter.js';
         import MenuList from './js/components/MenuList.js';
-        import Top from './js/components/Top.js';
         import Foot from './js/components/Foot.js';
         import TopBar from './js/components/TopBar.js'
 

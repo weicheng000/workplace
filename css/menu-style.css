@@ -10,6 +10,14 @@ main{
     padding: 45px 0;
     width: 1000px;
     margin: 0 auto;
+    @media (max-width: 1000px) {
+        width: 100%;
+        padding: 10px;
+        @media (max-width: 600px) {
+            width: 100%;
+            padding: 4px;
+        }
+    }
 }
 
 .menu-container {
@@ -105,11 +113,6 @@ section {
     color: #fff;
 }
 
-hr {
-    width: 100%;
-    border: 1px dashed #000;
-}
-
 .card-form {
     width: 200px;
     display: flex;
@@ -161,6 +164,9 @@ hr {
 
 .cardStyle{
     padding-right: 1.5em;
+    @media (max-width:600px) {
+        flex-direction: column;
+    }
 }
 
 .title {
@@ -193,11 +199,16 @@ hr {
 
 .imgLimit{
     border-radius: 0.8em;
+    width: 200px;
+    height: 154px;
     overflow: hidden;
     margin-right: 1.25em;
     flex-shrink: 0;
     border: 4px solid #FDBD10;
     box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
+    @media (max-width: 960px) {
+        margin-bottom: 1em;
+    }
 }
 
 .imgLimit > img{
@@ -207,4 +218,21 @@ hr {
 
 .rotate {
     transform: rotate(45deg);
+}
+
+.productComment{
+    @media (max-width: 960px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.counterStyle{
+    margin-left: 1em;
+    display: flex;
+    align-items: center;
+    @media (max-width: 600px) {
+        justify-content: end;
+        margin-top: 1em;
+    }
 }
