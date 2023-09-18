@@ -89,6 +89,10 @@ li {
     justify-content: space-between;
 }
 
+.align-item-center{
+    align-items: center;
+}
+
 .justify-end{
     justify-content: end;
 }

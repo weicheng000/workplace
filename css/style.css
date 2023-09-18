@@ -263,11 +263,26 @@ footer {
 /* vue animation */
 .v-enter-active,
 .v-leave-active {
-  transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .v-enter-from,
 .v-leave-to {
-  transform: translateY(-100%);
-  opacity: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+/* X軸動畫 */
+
+.slide-x-enter-active {
+    transition: all 0.5s ease 0.7s;
+}
+.slide-x-enter-from {
+    transform: translateX(-150%);
+}
+.slide-x-leave-active {
+    transition: all 0.5s ease;
+}
+.slide-x-leave-to {
+    transform: translateX(150%);
 }

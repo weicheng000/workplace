@@ -8,161 +8,33 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;700&family=Roboto+Mono:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./css/opcss.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/page.css">
     <title>Lastest News</title>
-    <style>
-        body {
-            background-color: #e5e5e5;
-        }
-
-        main {
-            width: 100%;
-        }
-
-        .news_container {
-            width: 80%;
-            margin: 0 auto;
-        }
-
-        .news_style {
-            width: 95%;
-            background-color: #0066B2;
-            color: #fff;
-            padding: 1.3em;
-            border-radius: 20px;
-            box-shadow: 1px 1px 2px #333;
-            cursor: pointer;
-            transition: all .3s;
-            margin-bottom: 1em;
-        }
-
-        .news_style:hover {
-            width: 95%;
-            background-color: #FDBD10;
-            color: #000;
-            box-shadow: 3px 3px 6px #333;
-            font-size: 1.2em;
-        }
-
-        .news_time {
-            right: 25px;
-            bottom: 10px;
-        }
-
-        .news_container>ul {
-            margin: 0 auto;
-        }
-
-        @media screen and (max-width : 664px) {
-            .news_container {
-                width: 100%;
-                padding-left: 10px;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <div class="container">
-        <header class="p-rl d-flex">
-            <div class="head_left">
-                <ul class="head_list d-flex">
-                    <li class="h-b-style"><a href="./about_us.html" class="btn-1">
-                            <p>關於我們</p>
-                            <p>About Us</p>
-                        </a></li>
-                    <li class="h-b-style"><a href="./menu.html" class="btn-1">
-                            <p>菜單</p>
-                            <p>Menu</p>
-                        </a></li>
-                    <li class="h-b-style p-rl"><a href="#" class="btn-1 auto-hightlight">
-                            <p>最新消息</p>
-                            <p>News</p>
-                        </a>
-                        <ul class="drop_list">
-                            <li class="h-b-style"><a href="./news.html" class="btn-1">
-                                    <p>最新消息</p>
-                                    <p>Last News</p>
-                                </a></li>
-                            <li class="h-b-style"><a href="./news2.html" class="btn-1">
-                                    <p>最新折扣</p>
-                                    <p>Last Bonus</p>
-                                </a></li>
-                        </ul>
-                    </li>
-                    <li class="h-b-style"><a href="./Reservation.html" class="btn-1">
-                            <p>線上預訂</p>
-                            <p>Reservation</p>
-                        </a></li>
-                    <li class="h-b-style"><a href="./login.html" class="btn-1">
-                            <p>會員登入</p>
-                            <p>Login</p>
-                        </a></li>
-                </ul>
-            </div>
-            <div class="head_right p-ab">
-                <picture>
-                    <source media="(max-width: 922px)" srcset="img/icon/logo-small.png" />
-                    <img src="./img/icon/logo.svg" alt="Horses in Hawaii">
-                </picture>
-            </div>
-            <div class="burger">
-                <img src="./img/icon/Menuburger.svg" alt="">
-            </div>
-        </header>
+    <div class="container" id="news">
+
+        <top-bar></top-bar>
 
         <main class="mt-2 mb-1">
-            <div class="news_container">
-                <h1>最新消息</h1>
-                <h1>Lastest News</h1>
-                <br>
-                <ul>
-                    <li class="news_style p-rl">
-                        <div class="news_title">
-                            <p class="fb">端午福利</p>
-                            <p>即日起至連假結束，經典系列搭配飲品享受95折優惠!</p>
-                        </div>
-                        <br>
-                        <div class="news_time p-ab">
-                            <p>2023/06/22</p>
-                        </div>
-                    </li>
-                    <li class="news_style p-rl">
-                        <div class="news_title">
-                            <p class="fb">端午福利</p>
-                            <p>即日起至連假結束，經典系列搭配飲品享受95折優惠!</p>
-                        </div>
-                        <br>
-                        <div class="news_time p-ab">
-                            <p>2023/06/22</p>
-                        </div>
-                    </li>
-                    <li class="news_style p-rl">
-                        <div class="news_title">
-                            <p class="fb">端午福利</p>
-                            <p>即日起至連假結束，經典系列搭配飲品享受95折優惠!</p>
-                        </div>
-                        <br>
-                        <div class="news_time p-ab">
-                            <p>2023/06/22</p>
-                        </div>
-                    </li>
-                    <li class="news_style p-rl">
-                        <div class="news_title">
-                            <p class="fb">端午福利</p>
-                            <p>即日起至連假結束，經典系列搭配飲品享受95折優惠!</p>
-                        </div>
-                        <br>
-                        <div class="news_time p-ab">
-                            <p>2023/06/22</p>
-                        </div>
-                    </li>
-                </ul>
 
-            </div>
-            <br>
+            <!-- lastNews -->
+            <transition name="slide-x" mode="out-in">
+                <div v-if="newsShow" class="news_container">
+                    <news-list :parent-data="news1" @change="change"></news-list>
+                </div>
+            </transition>
+
+
+            <!-- last Bonus -->
+            <transition name="slide-x" mode="out-in">
+                <div v-if="!newsShow" class="news_container">
+                    <news-list :parent-data="news2" @change="change"></news-list>
+                </div>
+            </transition>
+
             <div class="rb_bottom">
                 <div class="fy_y selected">1</div>
                 <div class="fy_y">2</div>
@@ -178,45 +50,7 @@
             </div>
         </main>
 
-        <footer class="d-flex p-rl">
-            <div class="flex-grow-1 worktime">
-                <ul>
-                    <li class="footer_type">營業時間 Our Hours</li>
-                    <li class="footer_type">禮拜二 到 禮拜五 / <span></span> 早上 11點 到 晚上 8點</li>
-                    <li class="footer_type">禮拜六 跟 禮拜天 / <span></span>早上 10點 到 晚上 9點</li>
-                    <li class="footer_type">禮拜一 公休</li>
-                </ul>
-            </div>
-            <div class="flex-grow-1 address">
-                <ul>
-                    <li class="instagram d-flex flex-a-c footer_type"><img src="img/icon/instagram.png" alt=""></li>
-                    <li class="footer_type">台北市南京東路120號</li>
-                    <li class="footer_type">02-85696678</li>
-                    <li class="footer_type">logorestaurant@gmail.com</li>
-                </ul>
-            </div>
-            <div class="flex-grow-1">
-                <ul class="d-flex">
-                    <li class="flex-grow-1">
-                        <ul>
-                            <li class="footer_type"><a href="./menu.html" class=" footer_type">菜單</a></li>
-                            <li class="footer_type"><a href="./about_us.html" class="footer_type">關於我們</a></li>
-                            <li class="footer_type"><a href="./news.html" class="footer_type">最新消息</a></li>
-                        </ul>
-                    </li>
-                    <li class="flex-grow-1">
-                        <ul>
-                            <li class="footer_type"><a href="./Reservation.html" class="footer_type">線上預訂</a></li>
-                            <li class="footer_type"><a href="./login.html" class="footer_type">會員登錄</a></li>
-                            <li class="footer_type"><a href="#" class="footer_type">外送服務</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="p-ab alert">
-                <p class="footer_type">本網站為緯育TibaMe【第85期】前端工程師專業技術養成班學員作品,僅供學習、展示之用途。</p>
-            </div>
-        </footer>
+        <foot />
     </div>
 
 
@@ -225,6 +59,97 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./js/header.js"></script>
     <script src="./js/page.js"></script>
+    <script type="module">
+        import { createApp, ref, reactive } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+        import Foot from './js/components/Foot.js';
+        import TopBar from './js/components/TopBar.js'
+        import NewsList from './js/components/NewsList.js'
+
+        createApp({
+            components: {
+                TopBar,
+                Foot,
+                NewsList
+            },
+            setup() {
+                const news1 = reactive({
+                    TCtitle: '最新消息',
+                    ENtitle: 'Lastest News',
+                    list: [
+                        {
+                            title: '公休預告',
+                            content: '端午後公休3天，煩請各位舊雨新知理解！',
+                            date: '2023/06/22'
+                        },
+                        {
+                            title: '特價商品',
+                            content: '多種特價商品限時優惠中，快來抓住機會！',
+                            date: '2023/07/10'
+                        },
+                        {
+                            title: '夏日瘋狂促銷',
+                            content: '炎炎夏日，商品瘋狂促銷中，超值優惠等您來！',
+                            date: '2023/08/05'
+                        },
+                        {
+                            title: '秋季新品發布',
+                            content: '秋季新品將於本月底發布，敬請期待！',
+                            date: '2023/09/25'
+                        },
+                        {
+                            title: '聖誕活動預告',
+                            content: '聖誕節即將到來，我們將舉辦多項精彩活動，請密切關注！',
+                            date: '2023/12/10'
+                        }
+                    ]
+                });
+
+                const news2 = ref({
+                    TCtitle: '最新折扣',
+                    ENtitle: 'Lastest Discount',
+                    list: [
+                        {
+                            title: '公休預告',
+                            content: '端午後公休3天，煩請各位舊雨新知理解！',
+                            date: '2023/06/22'
+                        },
+                        {
+                            title: '特價商品',
+                            content: '多種特價商品限時優惠中，快來抓住機會！',
+                            date: '2023/07/10'
+                        },
+                        {
+                            title: '夏日瘋狂促銷',
+                            content: '炎炎夏日，商品瘋狂促銷中，超值優惠等您來！',
+                            date: '2023/08/05'
+                        },
+                        {
+                            title: '秋季新品發布',
+                            content: '秋季新品將於本月底發布，敬請期待！',
+                            date: '2023/09/25'
+                        },
+                        {
+                            title: '聖誕活動預告',
+                            content: '聖誕節即將到來，我們將舉辦多項精彩活動，請密切關注！',
+                            date: '2023/12/10'
+                        }
+                    ]
+                });
+
+                const newsShow = ref(true);
+
+                const change = function ToggleBetweenNewsAndDiscount() {
+                    newsShow.value = !newsShow.value;
+                };
+                return {
+                    newsShow,
+                    change,
+                    news1,
+                    news2
+                }
+            }
+        }).mount('#news');
+    </script>
 </body>
 
 </html>

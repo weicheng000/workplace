@@ -14,21 +14,10 @@ export default {
                     <p>菜單</p>
                     <p>Menu</p>
                 </a></li>
-            <li class="h-b-style p-rl"><a href="#" class="btn-1">
+            <li class="h-b-style p-rl"><a href="/news.html" class="btn-1">
                     <p>最新消息</p>
                     <p>News</p>
-                </a>
-                <ul class="drop_list">
-                    <li class="h-b-style"><a href="./news.html" class="btn-1">
-                            <p>最新消息</p>
-                            <p>Last News</p>
-                        </a></li>
-                    <li class="h-b-style"><a href="./news2.html" class="btn-1">
-                            <p>最新折扣</p>
-                            <p>Last Bonus</p>
-                        </a></li>
-                </ul>
-            </li>
+                </a></li>
             <li class="h-b-style"><a href="./Reservation.html" class="btn-1">
                     <p>線上預訂</p>
                     <p>Reservation</p>
