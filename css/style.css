@@ -140,7 +140,7 @@ footer {
     flex-wrap: wrap;
 }
 
-.footer_type{
+.footer_type {
     color: #fff;
     text-decoration: none;
     letter-spacing: 0.3em;
@@ -151,37 +151,44 @@ footer {
     right: 0;
     bottom: 0;
 }
-.instagram::after{
+
+.instagram::after {
     content: '藍星鐵道便當';
     color: #fff;
     margin-left: 10px;
 }
+
 @media screen and (max-width : 1150px) {
-    footer{
+    footer {
         height: 450px;
     }
-    .worktime{
+
+    .worktime {
         width: 100%;
     }
 
 }
+
 @media screen and (max-width : 968px) {
-    .alert{
+    .alert {
         display: block;
         width: 95%;
         margin: 0 auto;
     }
 }
+
 @media screen and (max-width : 646px) {
-    footer{
+    footer {
         height: 650px;
     }
-    .address{
+
+    .address {
         width: 100%;
     }
 }
-@media screen and (max-width : 512px){
-    span::after{
+
+@media screen and (max-width : 512px) {
+    span::after {
         content: "\A";
         white-space: pre;
     }
@@ -189,26 +196,78 @@ footer {
 
 /* modal */
 
-.target{
-    margin-bottom: 1em;
+.modalBase {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 15;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
 }
 
-.modalTitle{
+.modalPage {
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(90deg, rgba(239, 239, 239, 1) 90%, rgba(0, 102, 178, 1) 97%);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.modalTitle {
     box-sizing: content-box;
     padding: 0.5em;
 }
 
-.modalInput{
-    width: 100%;
-    height: 4em;
-    border-radius: 8px;
-    padding: 0 0.75em;
-    border: 4px solid #0066B2;
-    margin-top: 0.75em;
-    background-color: rgb(234, 213, 155);
+.modalTitle>img {
+    width: 25px;
+    margin-right: 0.75em;
 }
 
-.modalInput:focus{
+.cardTitle {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+.modalInput {
+    width: 100%;
+    height: 4em;
+    /* border-radius: 8px; */
+    padding: 0 0.75em;
+    border: 1px solid #999;
+    border-bottom: 4px solid #0066B2;
+    margin-top: 0.75em;
+    background-color: #efefef;
+}
+
+.modalInput:focus {
     outline: 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.intro {
+    background-image: url('../img/baner/Group 18testBanner.png');
+    padding: 8em;
+    height: 100%;
+    background-origin: border-box;
+    background-size: cover;
+    color: white;
+}
+
+/* vue animation */
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  transform: translateY(-100%);
+  opacity: 0;
 }
