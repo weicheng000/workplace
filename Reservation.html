@@ -49,7 +49,7 @@
                             <p class="mb-1" :class="index === 3 ? 'red' : ''">Step.4 線上付款</p>
                         </nav>
                     </div>
-                    <!-- index 0 -->
+                    <!-- index 0 選擇時間-->
                     <div v-if="index === 0" class="col-9">
                         <div>
                             <div class="row p-1">
@@ -73,31 +73,29 @@
                             </div>
                         </div>
                     </div>
-                    <!-- index 1 -->
+                    <!-- index 1 選擇區域-->
                     <div v-if="index === 1" class="col-9">
                         <div>
                             <div class="row p-1">
                                 <h1 class="sp-1">選擇區域</h1>
                             </div>
                             <div class="row p-1 align-item-center">
-                                <p class="me-1">用餐人數為:</p>
-                                <input id="countMember" type="text" class="me-1 typeInput">
-                                <label for="countMember">人</label>
+                                <p class="me-1">您所預定地包間為:</p>
+                                <select class="typeInput">
+                                    <option value="1">藍星: 第一間</option>
+                                    <option value="2">藍星: 第二間</option>
+                                    <option value="3">藍星: 第三間</option>
+                                </select>
                             </div>
                             <div class="row p-1 align-item-center">
-                                <p class="me-1">訂位時間為:</p>
-                                <input type="date" id="inputDate" class="me-1 typeInput">
-                                <select class="typeInput">
-                                    <option value="1">中午</option>
-                                    <option value="2">晚上</option>
-                                </select>
+                                <p class="me-1">等待選擇時間</p>
                             </div>
                             <div class="row col-12 justify-end p-1">
                                 <button type="button" class="btn-3" @click="next(2)">下一步</button>
                             </div>
                         </div>
                     </div>
-                    <!-- index 2 -->
+                    <!-- index 2 預約餐點-->
                     <div v-if="index === 2" class="col-9">
                         <div>
                             <div class="row p-1">
@@ -121,7 +119,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- index 3 -->
+                    <!-- index 3 線上付款-->
                     <div v-if="index === 3" class="col-9">
                         <div>
                             <div class="row p-1">
@@ -141,7 +139,7 @@
                                 </select>
                             </div>
                             <div class="row col-12 justify-end p-1">
-                                <button type="button" class="btn-3">下一步</button>
+                                <button type="button" class="btn-3">提交</button>
                             </div>
                         </div>
                     </div>

@@ -208,6 +208,9 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 50px;
+    @media (max-width: 1050px) {
+        padding: 20px;
+    }
 }
 
 .modalPage {
@@ -217,6 +220,9 @@ footer {
     border-radius: 8px;
     overflow: hidden;
     padding: 0;
+    @media (max-width: 916px) {
+        background: rgba(239, 239, 239, 1);        
+    }
 }
 
 .modalTitle {

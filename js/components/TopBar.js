@@ -13,7 +13,7 @@ export default {
         <div class="modalBase" @click="openLoginModal">
             <div class="modalPage row" @click.stop>
                 <!-- main side -->
-                <div class="col-5">
+                <div class="col-5 col-md-12">
                     <div class="mb-1">
                         <div class="row">
                             <div class="row flex-ja-c modalTitle">
@@ -55,7 +55,7 @@ export default {
                     </div>
                 </div>
                 <!-- intro side -->
-                <div class="col-7 intro">
+                <div class="col-7 col-md-fade intro">
                     <p class="mb-1">加入會員，即可享受：</p>
                     <p class="mb-1">1.會員獨享的積分制度</p>
                     <p class="mb-1">2.每月輪換優惠</p>
