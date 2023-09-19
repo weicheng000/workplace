@@ -32,7 +32,7 @@ export default {
         <a href="./">
             <picture>
                 <source media="(max-width: 922px)" srcset="img/icon/logo-small.png" />
-                <img src="./img/icon/logo.svg" alt="Horses in Hawaii">
+                <img src="./img/icon/logo.svg" alt="Logos" class='rotateInfinite'>
             </picture>
         </a>
     </div>
@@ -48,6 +48,7 @@ export default {
             // 觸發自定義事件
             emit('show-login-modal');
         };
+
         return {
             triggerLoginModal,
         }

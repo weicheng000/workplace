@@ -208,6 +208,7 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 50px;
+
     @media (max-width: 1050px) {
         padding: 20px;
     }
@@ -220,8 +221,9 @@ footer {
     border-radius: 8px;
     overflow: hidden;
     padding: 0;
+
     @media (max-width: 916px) {
-        background: rgba(239, 239, 239, 1);        
+        background: rgba(239, 239, 239, 1);
     }
 }
 
@@ -283,12 +285,30 @@ footer {
 .slide-x-enter-active {
     transition: all 0.5s ease 0.7s;
 }
+
 .slide-x-enter-from {
     transform: translateX(-150%);
 }
+
 .slide-x-leave-active {
     transition: all 0.5s ease;
 }
+
 .slide-x-leave-to {
     transform: translateX(150%);
+}
+
+/* 定義旋轉動畫 */
+@keyframes slow-rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.rotateInfinite {
+    animation: slow-rotation 60s linear infinite;
 }
