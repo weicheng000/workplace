@@ -24,7 +24,7 @@ header {
     width: 100%;
     background-color: #FDBD10;
     margin-top: 40px;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, .7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     justify-content: end;
 }
 
@@ -40,7 +40,7 @@ p {
 }
 
 .head_right {
-    left: 3px;
+    left: 0px;
     top: -31px;
 }
 
@@ -57,10 +57,11 @@ p {
     .head_left {
         visibility: hidden;
         position: absolute;
-        right: 0;
+        right: -20px;
         top: 100px;
         opacity: 0;
         transition: all .3s;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 
     .head_left.active {
@@ -73,6 +74,9 @@ p {
     .head_list {
         display: flex;
         flex-direction: column;
+        background-color: #FDBD10;
+        border-radius: 8px;
+        overflow: hidden;
     }
 
     header {
