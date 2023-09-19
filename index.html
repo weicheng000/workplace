@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/opcss.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/home_section.css">
-    <title>Home</title>
+    <title>藍星便當</title>
 </head>
 
 <body>
@@ -32,35 +32,7 @@
             <br>
             <div class="swiper mySwiper menu">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <h1 class="fz-1 fb">香菇滑雞飯</h1>
-                        <br>
-                        <img src="img/item/27755.png" alt="">
-                        <p>香菇滑雞飯是一道經典的中式料理，結合了鮮香的香菇和嫩滑的雞肉，搭配著香噴噴的米飯。這道菜色澤誘人，口感豐富，讓人一試難忘。香菇帶來濃郁的香味，與滑嫩的雞肉完美融合，味道鮮美又健康。香菇滑雞飯不僅美味，還營養均衡，是一道適合全家人品嚐的佳餚。
-                        </p>
-                    </div>
-                    <div class="swiper-slide">
-                        <h1 class="fz-1 fb">香菇滑雞飯</h1>
-                        <br>
-                        <img src="img/item/27755.png" alt="">
-                        <p>香菇滑雞飯是一道經典的中式料理，結合了鮮香的香菇和嫩滑的雞肉，搭配著香噴噴的米飯。這道菜色澤誘人，口感豐富，讓人一試難忘。香菇帶來濃郁的香味，與滑嫩的雞肉完美融合，味道鮮美又健康。香菇滑雞飯不僅美味，還營養均衡，是一道適合全家人品嚐的佳餚。
-                        </p>
-                    </div>
-                    <div class="swiper-slide">
-                        <h1 class="fz-1 fb">香菇滑雞飯</h1>
-                        <br>
-                        <img src="img/item/27755.png" alt="">
-                        <p>香菇滑雞飯是一道經典的中式料理，結合了鮮香的香菇和嫩滑的雞肉，搭配著香噴噴的米飯。這道菜色澤誘人，口感豐富，讓人一試難忘。香菇帶來濃郁的香味，與滑嫩的雞肉完美融合，味道鮮美又健康。香菇滑雞飯不僅美味，還營養均衡，是一道適合全家人品嚐的佳餚。
-                        </p>
-                    </div>
-                    <div class="swiper-slide">
-                        <h1 class="fz-1 fb">香菇滑雞飯</h1>
-                        <br>
-                        <img src="img/item/27755.png" alt="">
-                        <p>香菇滑雞飯是一道經典的中式料理，結合了鮮香的香菇和嫩滑的雞肉，搭配著香噴噴的米飯。這道菜色澤誘人，口感豐富，讓人一試難忘。香菇帶來濃郁的香味，與滑嫩的雞肉完美融合，味道鮮美又健康。香菇滑雞飯不僅美味，還營養均衡，是一道適合全家人品嚐的佳餚。
-                        </p>
-                    </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" v-for="index in 5" :key="index">
                         <h1 class="fz-1 fb">香菇滑雞飯</h1>
                         <br>
                         <img src="img/item/27755.png" alt="">
@@ -71,7 +43,7 @@
                         <p>更多菜單請點擊!</p>
                         <br>
                         <div class="h-b-style">
-                            <a href="#" class="btn-1">
+                            <a href="./menu.html" class="btn-1">
                                 <p>菜單</p>
                                 <p>Menu</p>
                             </a>
@@ -237,42 +209,9 @@
                 }
             })
         })
-        if ($(window).width() > 845) {
-            let swiper = new Swiper(".mySwiper", {
-                slidesPerView: 1,
-                // spaceBetween: 30,
-                effect: "cards",
-                grabCursor: true,
-                // loop: true,
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-            });
-        } else {
-            let swiper = new Swiper(".mySwiper", {
-                slidesPerView: 1,
-                spaceBetween: 30,
-                // effect: "cards",
-                grabCursor: true,
-                // loop: true,
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-            });
-        }
     </script>
     <script type="module">
-        import { createApp, ref, reactive } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+        import { createApp, ref, reactive, onMounted } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
         import Foot from './js/components/Foot.js';
         import TopBar from './js/components/TopBar.js'
 
@@ -283,6 +222,42 @@
                 Foot,
             },
             setup() {
+
+                onMounted(() => {
+                    if ($(window).width() > 845) {
+                        let swiper = new Swiper(".mySwiper", {
+                            slidesPerView: 1,
+                            // spaceBetween: 30,
+                            effect: "cards",
+                            grabCursor: true,
+                            // loop: true,
+                            pagination: {
+                                el: ".swiper-pagination",
+                                clickable: true,
+                            },
+                            navigation: {
+                                nextEl: ".swiper-button-next",
+                                prevEl: ".swiper-button-prev",
+                            },
+                        });
+                    } else {
+                        let swiper = new Swiper(".mySwiper", {
+                            slidesPerView: 1,
+                            spaceBetween: 30,
+                            // effect: "cards",
+                            grabCursor: true,
+                            // loop: true,
+                            pagination: {
+                                el: ".swiper-pagination",
+                                clickable: true,
+                            },
+                            navigation: {
+                                nextEl: ".swiper-button-next",
+                                prevEl: ".swiper-button-prev",
+                            },
+                        });
+                    }
+                });
 
                 return {
 
