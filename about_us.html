@@ -8,142 +8,24 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;700&family=Roboto+Mono:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./css/opcss.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/footer.css">
-    <title>About</title>
-    <style>
-        body {
-            background-color: #e5e5e5;
-        }
-
-        main {
-            min-height: 50vh;
-            margin: 2em auto;
-        }
-
-        .as-top {
-            align-items: center;
-            gap: 1em;
-            background-color: rgba(255, 255, 255, .7);
-        }
-
-        .as-bottom {
-            background-color: #FDBD10;
-            padding: 2em 0;
-
-            @media screen and (max-width : 922px) {
-                flex-direction: column;
-                padding: 0 15px;
-            }
-        }
-
-        .intro {
-            width: 90%;
-
-            @media screen and (max-width: 922px) {
-                flex-direction: column;
-            }
-        }
-
-        .intro>img,
-        .intro>p {
-            width: 50%;
-            flex-grow: 1;
-
-            @media screen and (max-width: 922px) {
-                width: 95%;
-            }
-        }
-
-        .intro>img {
-            width: 25%;
-
-            @media screen and (max-width: 922px) {
-                width: 75%;
-            }
-        }
-
-        .intro>p {
-            margin-left: 30px;
-
-            @media screen and (max-width: 922px) {
-                margin-left: 0;
-                margin: 15px 0;
-            }
-        }
-
-        .as-bottom>img {
-            width: 30%;
-            height: 30%;
-            margin-top: 1em;
-
-            @media screen and (max-width: 922px) {
-                width: 50%;
-                height: 50%;
-                margin-bottom: 2em;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/aboutUs.css">
+    <title>關於我們</title>
 </head>
 
 <body>
-    <div class="container">
-        <header class="p-rl d-flex">
-            <div class="head_left">
-                <ul class="head_list d-flex">
-                    <li class="h-b-style"><a href="./about_us.html" class="btn-1">
-                            <p>關於我們</p>
-                            <p>About Us</p>
-                        </a></li>
-                    <li class="h-b-style"><a href="./menu.html" class="btn-1">
-                            <p>菜單</p>
-                            <p>Menu</p>
-                        </a></li>
-                    <li class="h-b-style p-rl"><a href="#" class="btn-1">
-                            <p>最新消息</p>
-                            <p>News</p>
-                        </a>
-                        <ul class="drop_list">
-                            <li class="h-b-style"><a href="./news.html" class="btn-1">
-                                    <p>最新消息</p>
-                                    <p>Last News</p>
-                                </a></li>
-                            <li class="h-b-style"><a href="./news2.html" class="btn-1">
-                                    <p>最新折扣</p>
-                                    <p>Last Bonus</p>
-                                </a></li>
-                        </ul>
-                    </li>
-                    <li class="h-b-style"><a href="./Reservation.html" class="btn-1">
-                            <p>線上預訂</p>
-                            <p>Reservation</p>
-                        </a></li>
-                    <li class="h-b-style"><a href="./login.html" class="btn-1">
-                            <p>會員登入</p>
-                            <p>Login</p>
-                        </a></li>
-                </ul>
-            </div>
-            <div class="head_right p-ab">
-                <picture>
-                    <source media="(max-width: 922px)" srcset="img/icon/logo-small.png" />
-                    <img src="./img/icon/logo.svg" alt="Horses in Hawaii">
-                </picture>
-            </div>
-            <div class="burger">
-                <img src="./img/icon/Menuburger.svg" alt="">
-            </div>
-        </header>
+    <div class="container" id="aboutUs">
+        <top-bar></top-bar>
 
         <main>
             <div class="as-top d-flex column">
-                <div class="d-flex flex-ja-c intro">
+                <div class="d-flex flex-ja-c intro_about ">
                     <img src="./img/item/as-t-01.jpg" alt="">
                     <p>在尋找快速、便捷的美食嗎？<br>
                         擔心用餐時間結束後找不到地方吃飯嗎？<br>
                         那選我們就對了！</p>
                 </div>
-                <div class="d-flex flex-ja-c intro">
+                <div class="d-flex flex-ja-c intro_about ">
                     <img src="./img/item/as-t-02.jpg" alt="">
                     <p>2020年是個特別的日子，因為在那一年，我們開幕了！<br>
                         歡迎來到XX便當，一家致力於為您提供美味、營養且方便的便當店。<br>
@@ -153,7 +35,7 @@
                         此外，我們也提供團體訂購和外送服務，以滿足您各種場合的需求。<br>
                     </p>
                 </div>
-                <div class="d-flex flex-ja-c intro">
+                <div class="d-flex flex-ja-c intro_about ">
                     <img src="./img/item/as-t-03.jpg" alt="">
                     <p>我們是一家致力於提供快速、便捷美食的餐廳。<br>
                         無論您是在忙碌的午餐時間或晚上外出用餐，我們都是您的最佳選擇。<br>
@@ -197,45 +79,7 @@
             </div>
         </main>
 
-        <footer class="d-flex p-rl">
-            <div class="flex-grow-1 worktime">
-                <ul>
-                    <li class="footer_type">營業時間 Our Hours</li>
-                    <li class="footer_type">禮拜二 到 禮拜五 / <span></span> 早上 11點 到 晚上 8點</li>
-                    <li class="footer_type">禮拜六 跟 禮拜天 / <span></span>早上 10點 到 晚上 9點</li>
-                    <li class="footer_type">禮拜一 公休</li>
-                </ul>
-            </div>
-            <div class="flex-grow-1 address">
-                <ul>
-                    <li class="instagram d-flex flex-a-c footer_type"><img src="img/icon/instagram.png" alt=""></li>
-                    <li class="footer_type">台北市南京東路120號</li>
-                    <li class="footer_type">02-85696678</li>
-                    <li class="footer_type">logorestaurant@gmail.com</li>
-                </ul>
-            </div>
-            <div class="flex-grow-1">
-                <ul class="d-flex">
-                    <li class="flex-grow-1">
-                        <ul>
-                            <li class="footer_type"><a href="./menu.html" class=" footer_type">菜單</a></li>
-                            <li class="footer_type"><a href="./about_us.html" class="footer_type">關於我們</a></li>
-                            <li class="footer_type"><a href="./news2.html" class="footer_type">最新消息</a></li>
-                        </ul>
-                    </li>
-                    <li class="flex-grow-1">
-                        <ul>
-                            <li class="footer_type"><a href="./Reservation.html" class="footer_type">線上預訂</a></li>
-                            <li class="footer_type"><a href="./login.html" class="footer_type">會員登錄</a></li>
-                            <li class="footer_type"><a href="#" class="footer_type">外送服務</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="p-ab alert">
-                <p class="footer_type">本網站為緯育TibaMe【第85期】前端工程師專業技術養成班學員作品,僅供學習、展示之用途。</p>
-            </div>
-        </footer>
+        <foot></foot>
     </div>
 
 
@@ -244,6 +88,25 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/header.js"></script>
+    <script type="module">
+        import { createApp, ref, reactive } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+        import Foot from './js/components/Foot.js';
+        import TopBar from './js/components/TopBar.js'
+
+
+        createApp({
+            components: {
+                TopBar,
+                Foot,
+            },
+            setup() {
+
+                return {
+                    
+                }
+            }
+        }).mount('#aboutUs');
+    </script>
 </body>
 
 </html>
