@@ -1,0 +1,41 @@
+$fontSize : 16px;
+
+*{
+    font-size: $fontSize;
+    margin: 0;
+    padding: 0;
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i}{
+        width: calc(100% / 12) * $i;
+        @if $i <= 11 {
+            padding: 1.25em;
+        }
+    }
+
+    .col-md-#{$i}{
+        @media (max-width: 916px) {
+            width: calc(100% / 12) * $i;
+        }
+    }
+
+    @if $i <= 5{
+        .sp-#{$i}{
+            letter-spacing: 0.2em * $i;
+        }
+
+        .p-#{$i}{
+            padding: 1em + (0.25em * $i);
+        }
+
+        .m-#{$i}{
+            margin: 1em + (0.25em * $i);
+        }
+
+        .mb-#{$i}{
+            margin-bottom: 1em + (0.25em * $i);
+        }
+    }
+
+}
